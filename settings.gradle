@@ -1,0 +1,2 @@
+include ':SmartPlant'
+rootProject.name = "SmartPlant"
