@@ -14,7 +14,7 @@ public class NotificationsViewModel extends ViewModel {
 
     public NotificationsViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("PAGE #3");
+        mText.setValue("PLACERHOLDER (3)");
     }
 
     public LiveData<String> getText() {

@@ -14,7 +14,7 @@ public class DashboardViewModel extends ViewModel {
 
     public DashboardViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("PAGE #1");
+        mText.setValue("PLACERHOLDER (2)");
     }
 
     public LiveData<String> getText() {
