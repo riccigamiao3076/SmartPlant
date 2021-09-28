@@ -2,19 +2,18 @@
 //Patrick Gomulka (N01347564)
 //Erni Banaag (N01221990)
 //Ricci Gamiao (N01363076)
-package ca.greenlypebble.it.smartplant.ui.notifications;
+package ca.greenlypebble.it.smartplant.ui.home;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class NotificationsViewModel extends ViewModel {
+public class Page1 extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public NotificationsViewModel() {
+    public Page1() {
         mText = new MutableLiveData<>();
-        mText.setValue("PLACERHOLDER (3)");
     }
 
     public LiveData<String> getText() {

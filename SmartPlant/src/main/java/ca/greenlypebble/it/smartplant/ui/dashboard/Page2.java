@@ -2,19 +2,19 @@
 //Patrick Gomulka (N01347564)
 //Erni Banaag (N01221990)
 //Ricci Gamiao (N01363076)
-package ca.greenlypebble.it.smartplant.ui.home;
+package ca.greenlypebble.it.smartplant.ui.dashboard;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class HomeViewModel extends ViewModel {
+public class Page2 extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public HomeViewModel() {
+    public Page2() {
         mText = new MutableLiveData<>();
-        mText.setValue("PLACERHOLDER (1)");
+        mText.setValue("PLACERHOLDER (2)");
     }
 
     public LiveData<String> getText() {
