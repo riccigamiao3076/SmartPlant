@@ -14,6 +14,7 @@ public class Page1 extends ViewModel {
 
     public Page1() {
         mText = new MutableLiveData<>();
+       // mText.setValue("The Smart Plant");
     }
 
     public LiveData<String> getText() {

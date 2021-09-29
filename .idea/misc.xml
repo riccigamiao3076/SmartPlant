@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidStudioProjects/SmartPlant/SmartPlant/src/main/res/layout/activity_main.xml" value="0.3307291666666667" />
         <entry key="..\:/AndroidStudioProjects/SmartPlant/SmartPlant/src/main/res/layout/fragment_page1.xml" value="0.33" />
+        <entry key="..\:/AndroidStudioProjects/SmartPlant/SmartPlant/src/main/res/layout/fragment_page2.xml" value="0.3307291666666667" />
+        <entry key="..\:/AndroidStudioProjects/SmartPlant/SmartPlant/src/main/res/layout/fragment_page3.xml" value="0.3307291666666667" />
       </map>
     </option>
   </component>
