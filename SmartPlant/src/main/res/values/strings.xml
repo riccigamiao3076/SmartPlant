@@ -13,4 +13,5 @@
     <string name="password">Password</string>
     <string name="login">Login</string>
     <string name="the_smart_plant">The Smart Plant</string>
+    <string name="exitMsg">Are you sure you want to close Smart Plant?</string>
 </resources>
