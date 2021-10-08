@@ -1,12 +1,12 @@
-#Smart Plant
+# Smart Plant
 
-##Team Members
+## Team Members
 Deo Anthony Madrid (N01361264)
 Patrick Gomulka (N01347564)
 Erni Banaag (N01221990)
 Ricci Gamiao (N01363076)
 
-##General Info
+## General Info
 This Capstone Project envisions the automation of planting using technology. 
 The Smart Plant helps plant growers track and monitor their plants daily and 
 provides an efficient system for plants to grow and sustain the healthy plant. 
