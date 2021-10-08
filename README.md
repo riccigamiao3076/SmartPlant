@@ -1,9 +1,9 @@
 # Smart Plant
 
 ## Team Members
-Deo Anthony Madrid (N01361264)
-Patrick Gomulka (N01347564)
-Erni Banaag (N01221990)
+Deo Anthony Madrid (N01361264)\
+Patrick Gomulka (N01347564)\
+Erni Banaag (N01221990)\
 Ricci Gamiao (N01363076)
 
 ## General Info
