@@ -7,10 +7,11 @@
     tools:context=".ui.home.HomeFragment">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/titleImage"
         android:layout_width="390dp"
         android:layout_height="248dp"
         android:layout_marginStart="13dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="13dp"
         android:layout_marginBottom="22dp"
         android:src="@drawable/image0_removebg"
@@ -23,25 +24,12 @@
         android:id="@+id/text_home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="24dp"
         android:text="@string/welcome_title"
         android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/registerButton"
-        android:layout_width="183dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="111dp"
-        android:layout_marginEnd="122dp"
-        android:layout_marginBottom="76dp"
-        android:text="@string/register"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <CheckBox
@@ -50,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="137dp"
         android:layout_marginEnd="155dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="36dp"
         android:text="@string/remember_me"
         app:layout_constraintBottom_toTopOf="@+id/registerButton"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,7 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="111dp"
         android:layout_marginEnd="130dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginBottom="8dp"
         android:ems="10"
         android:hint="@string/email_address"
         android:inputType="textEmailAddress"
@@ -79,7 +67,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="110dp"
         android:layout_marginEnd="131dp"
-        android:layout_marginBottom="44dp"
+        android:layout_marginBottom="40dp"
         android:ems="10"
         android:hint="@string/password"
         android:inputType="textPassword"
@@ -95,11 +83,24 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="111dp"
         android:layout_marginEnd="105dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="28dp"
         android:width="200dp"
         android:backgroundTint="@color/red"
         android:text="@string/sign_in"
         app:layout_constraintBottom_toTopOf="@+id/rememChkBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="183dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="111dp"
+        android:layout_marginEnd="122dp"
+        android:layout_marginBottom="64dp"
+        android:text="@string/register"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
