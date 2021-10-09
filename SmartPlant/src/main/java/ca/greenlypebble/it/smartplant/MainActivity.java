@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -50,10 +51,14 @@ public class MainActivity extends AppCompatActivity {
                     checkEA = emailAdd.getText().toString(),
                     checkPW = passWord.getText().toString();
 
-            if (checkEA.matches("admin") && checkPW.matches("admin") )
+            if (checkEA.matches("admin") && checkPW.matches("admin"))
                 setContentView(R.layout.fragment_page2);
-            // NavigationUI.setupWithNavController(navView, navController);
-        });
+
+
+
+    });
+            // NavigationUI.setupWithNavController(navView, navController)
+
     }
 
     //Exit Message.
