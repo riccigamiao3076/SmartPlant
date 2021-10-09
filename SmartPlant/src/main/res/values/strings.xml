@@ -23,4 +23,5 @@
     <string name="register">Register</string>
     <string name="sign_in">Sign in</string>
     <string name="welcome_title">WELCOME TO SMART PLANT</string>
+    <string name="remember_me">Remember Me</string>
 </resources>
