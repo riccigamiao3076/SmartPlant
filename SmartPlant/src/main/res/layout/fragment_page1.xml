@@ -7,12 +7,18 @@
     tools:context=".ui.home.HomeFragment">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="216dp"
+        android:layout_width="287dp"
+        android:layout_height="466dp"
+        android:layout_marginStart="62dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginBottom="320dp"
         android:src="@drawable/splashlogo"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="124dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.872" />
 
     <TextView
         android:id="@+id/text_home"
@@ -21,7 +27,7 @@
         android:layout_marginStart="113dp"
         android:layout_marginEnd="113dp"
         android:layout_marginBottom="492dp"
-        android:text="WELCOME TO SMART PLANT"
+        android:text="@string/welcome_title"
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,27 +37,18 @@
         android:id="@+id/signInbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginBottom="172dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="47dp"
+        android:layout_marginEnd="103dp"
+        android:layout_marginBottom="44dp"
         android:width="200dp"
         android:backgroundTint="@color/red"
-        android:text="Sign in"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/infoTxtCredits"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="168dp"
-        android:layout_marginBottom="151dp"
-        android:autoLink="web"
-        android:linksClickable="true"
-        android:text="Register Here"
-        android:textSize="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"></TextView>
+        android:text="@string/sign_in"
+        app:layout_constraintBottom_toTopOf="@+id/registerButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
 
     <EditText
         android:id="@+id/editTextTextEmailAddress"
@@ -60,7 +57,7 @@
         android:layout_marginStart="100dp"
         android:layout_marginBottom="364dp"
         android:ems="10"
-        android:hint="Email Address"
+        android:hint="@string/email_address"
         android:inputType="textEmailAddress"
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -73,10 +70,24 @@
         android:layout_marginStart="100dp"
         android:layout_marginBottom="300dp"
         android:ems="10"
-        android:hint="Password"
+        android:hint="@string/password"
         android:inputType="textPassword"
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="153dp"
+        android:layout_marginBottom="112dp"
+        android:text="@string/register"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signInbutton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

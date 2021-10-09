@@ -20,4 +20,7 @@
     <string name="planthealth">plantHealth</string>
     <string name="planthistory">plantHistory</string>
     <string name="learnplants">learnPlants</string>
+    <string name="register">Register</string>
+    <string name="sign_in">Sign in</string>
+    <string name="welcome_title">WELCOME TO SMART PLANT</string>
 </resources>
