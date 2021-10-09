@@ -27,13 +27,8 @@ public class DashboardFragment extends Fragment {
         page2 =
                 new ViewModelProvider(this).get(Page2.class);
         View root = inflater.inflate(R.layout.fragment_page2, container, false);
-        final TextView textView = root.findViewById(R.id.text_dashboard);
-        page2.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+        final TextView textView = root.findViewById(R.id.dashName);
+        page2.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 }

@@ -7,5 +7,17 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="hello">Hello!</string>
+    <string name="loginTitle">THE SMART PLANT</string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="the_smart_plant">The Smart Plant</string>
     <string name="exitMsg">Are you sure you want to close Smart Plant?</string>
+    <string name="dashTitle">Smart Plant Dashboard</string>
+    <string name="sensorsHeader">Sensors</string>
+    <string name="sensorsButton">sensors</string>
+    <string name="planthealth">plantHealth</string>
+    <string name="planthistory">plantHistory</string>
+    <string name="learnplants">learnPlants</string>
 </resources>

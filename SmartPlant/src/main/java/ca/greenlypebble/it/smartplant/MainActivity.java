@@ -45,37 +45,25 @@ public class MainActivity extends AppCompatActivity {
         emailAdd = (EditText) findViewById(R.id.editTextTextEmailAddress);
         passWord = (EditText) findViewById(R.id.editTextTextPassword);
 
-        signIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final String
-                        checkEA = emailAdd.getText().toString(),
-                        checkPW = passWord.getText().toString();
+        signIn.setOnClickListener(v -> {
+            final String
+                    checkEA = emailAdd.getText().toString(),
+                    checkPW = passWord.getText().toString();
 
-                if (checkEA.matches("admin") && checkPW.matches("admin") )
-                    setContentView(R.layout.fragment_page2);
-
-                else {
-
-                }
-                // NavigationUI.setupWithNavController(navView, navController);
-            }
+            if (checkEA.matches("admin") && checkPW.matches("admin") )
+                setContentView(R.layout.fragment_page2);
+            // NavigationUI.setupWithNavController(navView, navController);
         });
     }
 
-
+    //Exit Message.
     @Override
     public void onBackPressed() {
         new AlertDialog.Builder(this)
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .setTitle("Smart Plant")
                 .setMessage(R.string.exitMsg)
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        finish();
-                    }
-                })
+                .setPositiveButton("Yes", (dialog, which) -> finish())
                 .setNegativeButton("No", null)
                 .show();
     }
