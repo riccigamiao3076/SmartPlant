@@ -5,13 +5,13 @@
     <item
         android:id="@+id/cameraMenu"
         android:icon="@drawable/ic_camera"
-        android:title="@string/string_camera"
+        android:title="@string/camera"
         app:showAsAction="always|withText"/>
 
     <item
         android:id="@+id/feedbackMenu"
         android:icon="@drawable/ic_feedback"
-        android:title="@string/string_feedback"
+        android:title="@string/feedback"
         app:showAsAction="never"/>
 
     <item

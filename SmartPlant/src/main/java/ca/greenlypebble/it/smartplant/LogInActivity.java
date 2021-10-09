@@ -38,12 +38,12 @@ public class LogInActivity extends Activity {
             }
 
             else if (checkEA.matches("")) {
-                Toast errorM = Toast.makeText(getApplicationContext(), "Please enter your username.", Toast.LENGTH_SHORT);
+                Toast errorM = Toast.makeText(getApplicationContext(), "Please Enter Your Username.", Toast.LENGTH_SHORT);
                 errorM.show();
             }
 
             else if (checkPW.matches("")) {
-                Toast errorM = Toast.makeText(getApplicationContext(), "Please enter your password.", Toast.LENGTH_SHORT);
+                Toast errorM = Toast.makeText(getApplicationContext(), "Please Enter Your Password.", Toast.LENGTH_SHORT);
                 errorM.show();
             }
 
@@ -57,12 +57,12 @@ public class LogInActivity extends Activity {
     private void errorM() {
 
         new androidx.appcompat.app.AlertDialog.Builder(this)
-            .setTitle("Sign In Failed")
-            .setMessage("Invalid username or password.")
+            .setTitle("Sign In Failed!")
+            .setMessage("Invalid Username or Password.\nEnter ''admin'' for both fields to login.")
             .setIcon(R.drawable.ic_baseline_error_24)
 
             .setCancelable(true)
-            .setPositiveButton("Try again", null)
+            .setPositiveButton("Try Again", null)
             .show();
     }
 }
