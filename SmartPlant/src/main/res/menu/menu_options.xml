@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/cameraMenu"
+        android:icon="@drawable/ic_camera"
+        android:title="@string/string_camera"
+        app:showAsAction="always|withText"/>
+
+    <item
+        android:id="@+id/feedbackMenu"
+        android:icon="@drawable/ic_feedback"
+        android:title="@string/string_feedback"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/statusMenu"
+        android:icon="@drawable/ic_status"
+        android:title="@string/status"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/settingMenu"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/settings" />
+</menu>
