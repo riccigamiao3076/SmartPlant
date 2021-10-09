@@ -36,30 +36,14 @@ public class MainActivity extends AppCompatActivity {
         // BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
+        // NavigationUI.setupWithNavController(navView, navController)
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-
-        signIn = (Button) findViewById(R.id.signInbutton);
-        emailAdd = (EditText) findViewById(R.id.editTextTextEmailAddress);
-        passWord = (EditText) findViewById(R.id.editTextTextPassword);
-
-        signIn.setOnClickListener(v -> {
-            final String
-                    checkEA = emailAdd.getText().toString(),
-                    checkPW = passWord.getText().toString();
-
-            if (checkEA.matches("admin") && checkPW.matches("admin"))
-                setContentView(R.layout.fragment_page2);
-
-
-
-    });
-            // NavigationUI.setupWithNavController(navView, navController)
-
     }
+
 
     //Exit Message.
     @Override

@@ -9,15 +9,4 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 public class Page2 extends ViewModel {
-
-    private MutableLiveData<String> mText;
-
-    public Page2() {
-        mText = new MutableLiveData<>();
-        mText.setValue("PLACERHOLDER (2)");
-    }
-
-    public LiveData<String> getText() {
-        return mText;
-    }
 }
