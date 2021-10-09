@@ -1,10 +1,15 @@
 package ca.greenlypebble.it.smartplant;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.android.material.snackbar.Snackbar;
 
 public class LogInActivity extends Activity {
 
@@ -15,11 +20,6 @@ public class LogInActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loginpage);
-
-        // BottomNavigationView navView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-
 
         signIn = (Button) findViewById(R.id.signInbutton);
         emailAdd = (EditText) findViewById(R.id.editTextTextEmailAddress);
@@ -34,13 +34,35 @@ public class LogInActivity extends Activity {
 
                 Intent intent = new Intent(LogInActivity.this, MainActivity.class);
                 startActivity(intent);
+                finish();
+            }
+
+            else if (checkEA.matches("")) {
+                Toast errorM = Toast.makeText(getApplicationContext(), "Please enter your username.", Toast.LENGTH_SHORT);
+                errorM.show();
+            }
+
+            else if (checkPW.matches("")) {
+                Toast errorM = Toast.makeText(getApplicationContext(), "Please enter your password.", Toast.LENGTH_SHORT);
+                errorM.show();
             }
 
             else {
-
-
+                errorM();
             }
 
         });
+    }
+
+    private void errorM() {
+
+        new androidx.appcompat.app.AlertDialog.Builder(this)
+            .setTitle("Sign In Failed")
+            .setMessage("Invalid username or password.")
+            .setIcon(R.drawable.ic_baseline_error_24)
+
+            .setCancelable(true)
+            .setPositiveButton("Try again", null)
+            .show();
     }
 }
