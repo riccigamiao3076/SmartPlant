@@ -35,15 +35,17 @@ public class LogInActivity extends Activity {
                 Intent intent = new Intent(LogInActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
+                Toast success = Toast.makeText(getApplicationContext(), "Sucessfully Signed in.", Toast.LENGTH_SHORT);
+                success.show();
             }
 
             else if (checkEA.matches("")) {
-                Toast errorM = Toast.makeText(getApplicationContext(), "Please Enter Your Username.", Toast.LENGTH_SHORT);
+                Toast errorM = Toast.makeText(getApplicationContext(), "Please Valid Username.", Toast.LENGTH_SHORT);
                 errorM.show();
             }
 
             else if (checkPW.matches("")) {
-                Toast errorM = Toast.makeText(getApplicationContext(), "Please Enter Your Password.", Toast.LENGTH_SHORT);
+                Toast errorM = Toast.makeText(getApplicationContext(), "Please Enter Password.", Toast.LENGTH_SHORT);
                 errorM.show();
             }
 
