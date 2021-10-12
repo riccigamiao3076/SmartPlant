@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -21,12 +22,26 @@ import ca.greenlypebble.it.smartplant.R;
 public class NotificationsFragment extends Fragment {
 
 
+    Button myProf,
+            idNumber,
+            prefer,
+            cntctUs,
+            about,
+            rateApp;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-                new ViewModelProvider(this).get(Page3.class);
+        new ViewModelProvider(this).get(Page3.class);
         View root = inflater.inflate(R.layout.fragment_page3, container, false);
+
+        myProf = (Button) root.findViewById(R.id.mpBtn);
+        idNumber = (Button) root.findViewById(R.id.idBtn);
+        prefer = (Button) root.findViewById(R.id.prefBtn);
+        cntctUs = (Button) root.findViewById(R.id.cntBtn);
+        about = (Button) root.findViewById(R.id.abtBtn);
+        rateApp = (Button) root.findViewById(R.id.rateBtn);
 
         return root;
     }
