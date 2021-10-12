@@ -28,4 +28,11 @@
     <string name="feedback">Feedback</string>
     <string name="camera">Cam</string>
     <string name="status">Status</string>
+    <string name="planted_30_days_ago">Planted 30 days ago</string>
+    <string name="planttype">plantType</string>
+    <string name="growth_90">Growth 90%</string>
+    <string name="track">Track</string>
+    <string name="light">Light</string>
+    <string name="temp">Temp</string>
+    <string name="smart_plant">Smart Plant</string>
 </resources>

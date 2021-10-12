@@ -8,4 +8,107 @@
     tools:context=".ui.home.HomeFragment">
 
 
+    <ImageView
+        android:id="@+id/pepermintPlant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/planttype"
+        android:src="@drawable/plantstatus"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/dobPlant"
+        android:layout_width="99dp"
+        android:layout_height="18dp"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center"
+        android:text="@string/planted_30_days_ago"
+        android:textColor="#070707"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/pepermintPlant"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.671" />
+
+    <TextView
+        android:id="@+id/growthPlant"
+        android:layout_width="99dp"
+        android:layout_height="18dp"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center"
+        android:text="@string/growth_90"
+        android:textColor="#070707"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/pepermintPlant"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.708" />
+
+    <Button
+        android:id="@+id/growthButton"
+        android:layout_width="96dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#8BC34A"
+        android:text="@string/track"
+        android:textColor="#37474F"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.765" />
+
+    <Button
+        android:id="@+id/lightButton"
+        android:layout_width="96dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#8BC34A"
+        android:text="@string/light"
+        android:textColor="#37474F"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.765"
+        tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
+
+    <Button
+        android:id="@+id/tempsButton2"
+        android:layout_width="96dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#8BC34A"
+        android:text="@string/temp"
+        android:textColor="#37474F"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.949"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.765"
+        tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/smartPlant"
+        android:layout_width="315dp"
+        android:layout_height="79dp"
+        android:fontFamily="casual"
+        android:gravity="center"
+        android:text="@string/smart_plant"
+        android:textColor="#503F6E"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.062" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
