@@ -16,6 +16,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -43,6 +45,23 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
+
+        //Firebase Database
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference accountLogin = database.getReference("Account");
+        DatabaseReference temp = database.getReference("Temperature");
+        DatabaseReference humid = database.getReference("Humidity");
+        DatabaseReference soilMoisture = database.getReference("Soil Moisture");
+        DatabaseReference lightLevels = database.getReference("Light Levels");
+        DatabaseReference motionSensor = database.getReference("Moisture");
+
+        accountLogin.setValue("Login Successful");
+        temp.setValue("Temperature: 75 Degrees");
+        humid.setValue("Humidity: 55%");
+        soilMoisture.setValue("Soil Moisture: 50%");
+        lightLevels.setValue("Light levels: 500 Lumens");
+        motionSensor.setValue("Motion sensor: Active");
+
     }
 
     @Override
