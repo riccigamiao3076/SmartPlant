@@ -78,7 +78,6 @@
         android:contentDescription="@string/sensorsButton"
         android:scaleType="fitXY"
         android:src="@drawable/sensorbutton"
-        app:layout_constraintBottom_toTopOf="@+id/nav_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.069"
         app:layout_constraintStart_toStartOf="parent"

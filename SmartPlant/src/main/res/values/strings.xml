@@ -36,4 +36,13 @@
     <string name="light">Light</string>
     <string name="temp">Temp</string>
     <string name="smart_plant">Smart Plant</string>
+    <string name="homeTItle">Smart Plant Home</string>
+    <string name="profileTitle">Smart Plant Profile</string>
+    <string name="myProfile">My Profile</string>
+    <string name="idNum">ID Number</string>
+    <string name="preferences">Preferences</string>
+    <string name="contactUs">Contact us</string>
+    <string name="about">About</string>
+    <string name="rateTheApp">Rate the app</string>
+    <string name="signOut">SIGN OUT</string>
 </resources>

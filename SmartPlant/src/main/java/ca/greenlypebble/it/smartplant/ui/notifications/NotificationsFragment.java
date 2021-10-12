@@ -20,11 +20,11 @@ import ca.greenlypebble.it.smartplant.R;
 
 public class NotificationsFragment extends Fragment {
 
-    private Page3 page3;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        page3 =
+
                 new ViewModelProvider(this).get(Page3.class);
         View root = inflater.inflate(R.layout.fragment_page3, container, false);
 

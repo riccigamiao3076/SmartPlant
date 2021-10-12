@@ -7,6 +7,22 @@
     android:background="#9C8BC34A"
     tools:context=".ui.home.HomeFragment">
 
+    <TextView
+        android:id="@+id/smartPlant"
+        android:layout_width="335dp"
+        android:layout_height="79dp"
+        android:fontFamily="casual"
+        android:gravity="center"
+        android:text="@string/homeTItle"
+        android:textAlignment="center"
+        android:textColor="#503F6E"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.026" />
 
     <ImageView
         android:id="@+id/pepermintPlant"
@@ -54,7 +70,7 @@
         android:layout_width="96dp"
         android:layout_height="48dp"
         android:backgroundTint="#8BC34A"
-        android:text="Temp "
+        android:text="Temp"
         android:textColor="#37474F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -108,21 +124,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.926" />
 
-    <TextView
-        android:id="@+id/smartPlant"
-        android:layout_width="335dp"
-        android:layout_height="79dp"
-        android:fontFamily="casual"
-        android:gravity="center"
-        android:text="Smart Plant Home"
-        android:textAlignment="center"
-        android:textColor="#503F6E"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.026" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
