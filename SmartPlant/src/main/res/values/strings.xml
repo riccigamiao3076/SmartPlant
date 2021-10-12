@@ -34,7 +34,6 @@
     <string name="growth_90">Growth 90%</string>
     <string name="track">Track</string>
     <string name="light">Light</string>
-    <string name="temp">Temp</string>
     <string name="smart_plant">Smart Plant</string>
     <string name="homeTItle">Smart Plant Home</string>
     <string name="profileTitle">Smart Plant Profile</string>
@@ -45,4 +44,7 @@
     <string name="about">About</string>
     <string name="rateTheApp">Rate the app</string>
     <string name="signOut">SIGN OUT</string>
+    <string name="temp">Temp</string>
+    <string name="string_temp">temp</string>
+    <string name="peppermint">Peppermint</string>
 </resources>

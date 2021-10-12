@@ -7,7 +7,7 @@
     <string name="app_name">SmartPlant</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_account">Account</string>
     <string name="hello">Hello!</string>
     <string name="loginTitle">THE SMART PLANT</string>
     <string name="email_address">Email Address</string>
@@ -21,6 +21,7 @@
     <string name="planthealth">plantHealth</string>
     <string name="planthistory">plantHistory</string>
     <string name="learnplants">learnPlants</string>
+    <string name="register">Register</string>
     <string name="sign_in">Sign in</string>
     <string name="welcome_title">WELCOME TO SMART PLANT</string>
     <string name="remember_me">Remember Me</string>
@@ -33,6 +34,18 @@
     <string name="growth_90">Growth 90%</string>
     <string name="track">Track</string>
     <string name="light">Light</string>
-    <string name="temp">Temp</string>
     <string name="smart_plant">Smart Plant</string>
+    <string name="homeTItle">Smart Plant Home</string>
+    <string name="profileTitle">Smart Plant Profile</string>
+    <string name="myProfile">My Profile</string>
+    <string name="idNum">ID Number</string>
+    <string name="preferences">Preferences</string>
+    <string name="contactUs">Contact us</string>
+    <string name="about">About</string>
+    <string name="rateTheApp">Rate the app</string>
+    <string name="signOut">SIGN OUT</string>
+    <string name="temp">Temp</string>
+    <string name="string_temp">temp</string>
+    <string name="peppermint">Peppermint</string>
+
 </resources>
