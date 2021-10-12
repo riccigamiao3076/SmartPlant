@@ -20,6 +20,6 @@
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="ca.greenlypebble.it.smartplant.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
+        android:label="Account"
         tools:layout="@layout/fragment_page3" />
 </navigation>
