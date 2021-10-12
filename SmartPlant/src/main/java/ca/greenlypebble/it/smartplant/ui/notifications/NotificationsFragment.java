@@ -27,13 +27,7 @@ public class NotificationsFragment extends Fragment {
         page3 =
                 new ViewModelProvider(this).get(Page3.class);
         View root = inflater.inflate(R.layout.fragment_page3, container, false);
-        final TextView textView = root.findViewById(R.id.text_notifications);
-        page3.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+
         return root;
     }
 }

@@ -7,29 +7,131 @@
     android:background="#9C8BC34A"
     tools:context=".ui.notifications.NotificationsFragment">
 
+    <TextView
+        android:id="@+id/smartPlant"
+        android:layout_width="335dp"
+        android:layout_height="79dp"
+        android:backgroundTint="#A82727"
+        android:fontFamily="casual"
+        android:gravity="center"
+        android:text="Smart Plant Profile"
+        android:textAlignment="center"
+        android:textColor="#503F6E"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.026" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="378dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="124dp"
+        android:backgroundTint="#5EFFFFFF"
+        android:text="My Profile"
+        android:textAlignment="textStart"
+        android:textColor="#A9000000"
+        app:layout_constraintBottom_toTopOf="@+id/button15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:rippleColor="#00FFFFFF" />
+
+    <Button
+        android:id="@+id/button15"
+        android:layout_width="378dp"
+        android:layout_height="67dp"
+        android:backgroundTint="#5EFFFFFF"
+        android:text="ID Number"
+        android:textAlignment="textStart"
+        android:textColor="#A9000000"
+        app:layout_constraintBottom_toTopOf="@+id/button16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <Button
+        android:id="@+id/button16"
+        android:layout_width="378dp"
+        android:layout_height="67dp"
+        android:backgroundTint="#5EFFFFFF"
+        android:text="Preferences"
+        android:textAlignment="textStart"
+        android:textColor="#A9000000"
+        app:layout_constraintBottom_toTopOf="@+id/button17"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button15" />
+
+    <Button
+        android:id="@+id/button17"
+        android:layout_width="378dp"
+        android:layout_height="67dp"
+        android:backgroundTint="#5EFFFFFF"
+        android:text="Contact us"
+        android:textAlignment="textStart"
+        android:textColor="#A9000000"
+        app:layout_constraintBottom_toTopOf="@+id/button18"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button16" />
+
+    <Button
+        android:id="@+id/button18"
+        android:layout_width="378dp"
+        android:layout_height="67dp"
+        android:backgroundTint="#5EFFFFFF"
+        android:text="About"
+        android:textAlignment="textStart"
+        android:textColor="#A9000000"
+        app:layout_constraintBottom_toTopOf="@+id/button19"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button17" />
+
+    <Button
+        android:id="@+id/button19"
+        android:layout_width="378dp"
+        android:layout_height="67dp"
+        android:backgroundTint="#5EFFFFFF"
+        android:text="Rate the app"
+        android:textAlignment="textStart"
+        android:textColor="#A9000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button18" />
+
+    <Button
+        android:id="@+id/button20"
+        android:layout_width="119dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="64dp"
+        android:backgroundTint="#5EFFFFFF"
+        android:text="SIGN OUT"
+        android:textAlignment="center"
+        android:textColor="#A9000000"
+        app:layout_constraintBottom_toTopOf="@+id/nav_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="0dp"
         android:background="?android:attr/windowBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:menu="@menu/bottom_nav_menu" />
 
-    <TextView
-        android:id="@+id/text_notifications"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
