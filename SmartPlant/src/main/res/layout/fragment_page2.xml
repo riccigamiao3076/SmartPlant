@@ -24,77 +24,67 @@
         app:layout_constraintVertical_bias="0.026" />
 
     <ImageButton
+        android:id="@+id/learnButton"
+        android:layout_width="181dp"
+        android:layout_height="168dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#9C8BC34A"
+        android:contentDescription="@string/learnplants"
+        android:scaleType="fitXY"
+        android:src="@drawable/learnbutton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintStart_toEndOf="@+id/historyButton"
+        app:layout_constraintTop_toBottomOf="@+id/healthButton"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,ImageContrastCheck" />
+
+    <ImageButton
         android:id="@+id/historyButton"
         android:layout_width="181dp"
         android:layout_height="168dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="#9C8BC34A"
         android:contentDescription="@string/planthistory"
         android:scaleType="fitXY"
         android:src="@drawable/historybutton"
-        app:layout_constraintBottom_toTopOf="@+id/nav_view"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintHorizontal_bias="0.069"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sensorsButton"
-        app:layout_constraintVertical_bias="0.531"
-        tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
-
-    <ImageButton
-        android:id="@+id/sensorsButton"
-        android:layout_width="181dp"
-        android:layout_height="168dp"
-        android:layout_marginTop="30dp"
-        android:backgroundTint="#9C8BC34A"
-        android:contentDescription="@string/sensorsButton"
-        android:scaleType="fitXY"
-        android:src="@drawable/sensorbutton"
-        app:layout_constraintBottom_toTopOf="@+id/nav_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.073"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dashName"
-        app:layout_constraintVertical_bias="0.002"
         tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/healthButton"
         android:layout_width="181dp"
         android:layout_height="168dp"
+        android:layout_marginTop="180dp"
         android:backgroundTint="#9C8BC34A"
         android:contentDescription="@string/planthealth"
         android:scaleType="fitXY"
         android:src="@drawable/planthealthbutton"
-        app:layout_constraintBottom_toBottomOf="@+id/sensorsButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toEndOf="@+id/sensorsButton"
-        app:layout_constraintTop_toTopOf="@+id/sensorsButton"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
 
     <ImageButton
-        android:id="@+id/learnButton"
+        android:id="@+id/sensorsButton"
         android:layout_width="181dp"
         android:layout_height="168dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginTop="180dp"
         android:backgroundTint="#9C8BC34A"
-        android:contentDescription="@string/learnplants"
+        android:contentDescription="@string/sensorsButton"
         android:scaleType="fitXY"
-        android:src="@drawable/learnbutton"
-        app:layout_constraintBottom_toBottomOf="@+id/historyButton"
+        android:src="@drawable/sensorbutton"
+        app:layout_constraintBottom_toTopOf="@+id/nav_view"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.346"
-        app:layout_constraintStart_toEndOf="@+id/historyButton"
-        app:layout_constraintTop_toTopOf="@+id/historyButton"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,ImageContrastCheck" />
+        app:layout_constraintHorizontal_bias="0.069"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.002"
+        tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="?android:attr/windowBackground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/bottom_nav_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
