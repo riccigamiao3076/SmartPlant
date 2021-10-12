@@ -47,5 +47,6 @@
     <string name="temp">Temp</string>
     <string name="string_temp">temp</string>
     <string name="peppermint">Peppermint</string>
+    <string name="portrait_lock">Portrait Lock</string>
 
 </resources>

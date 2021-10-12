@@ -90,12 +90,13 @@
         android:backgroundTint="#5EFFFFFF"
         android:text="@string/about"
         android:textAlignment="textStart"
-        android:textColor="#A9000000"
+        android:textColor="#33691E"
         app:layout_constraintBottom_toTopOf="@+id/rateBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cntBtn" />
+        app:layout_constraintTop_toBottomOf="@+id/cntBtn"
+        tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
 
     <Button
         android:id="@+id/rateBtn"
@@ -113,15 +114,29 @@
     <Button
         android:id="@+id/sOBtn"
         android:layout_width="119dp"
-        android:layout_height="46dp"
+        android:layout_height="48dp"
         android:layout_marginBottom="112dp"
         android:backgroundTint="#F44336"
         android:text="@string/signOut"
         android:textAlignment="center"
-        android:textColor="#A9000000"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/portraitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="@string/portrait_lock"
+        android:text="@string/portrait_lock"
+        android:textColor="#616161"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.923" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

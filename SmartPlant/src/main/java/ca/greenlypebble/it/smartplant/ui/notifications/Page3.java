@@ -4,20 +4,31 @@
 //Ricci Gamiao (N01363076)
 package ca.greenlypebble.it.smartplant.ui.notifications;
 
+import android.widget.Button;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import ca.greenlypebble.it.smartplant.R;
+
 public class Page3 extends ViewModel {
+
+
 
     private MutableLiveData<String> mText;
 
     public Page3() {
         mText = new MutableLiveData<>();
         mText.setValue("PLACERHOLDER (3)");
+
+
     }
+
+
 
     public LiveData<String> getText() {
         return mText;
     }
+
 }

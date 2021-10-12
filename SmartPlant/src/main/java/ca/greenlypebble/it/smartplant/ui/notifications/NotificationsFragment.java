@@ -6,6 +6,7 @@ package ca.greenlypebble.it.smartplant.ui.notifications;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,7 +34,8 @@ public class NotificationsFragment extends Fragment {
             cntctUs,
             about,
             rateApp,
-            signOut;
+            signOut,
+            portraitLock;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -49,6 +51,10 @@ public class NotificationsFragment extends Fragment {
         about = (Button) root.findViewById(R.id.abtBtn);
         rateApp = (Button) root.findViewById(R.id.rateBtn);
         signOut = (Button) root.findViewById(R.id.sOBtn);
+        portraitLock = (Button) root.findViewById(R.id.portraitButton);
+
+        portraitLock.setOnClickListener(v -> getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT));
+
 
         signOut.setOnClickListener(v -> {
 
