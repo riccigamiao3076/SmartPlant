@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="#ECFFDC">
 
-
     <ImageView
         android:id="@+id/titleImage"
         android:layout_width="390dp"
