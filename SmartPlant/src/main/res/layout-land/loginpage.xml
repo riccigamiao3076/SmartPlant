@@ -61,17 +61,16 @@
         android:id="@+id/editTextTextEmailAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
-        android:layout_marginBottom="9dp"
         android:ems="10"
         android:hint="@string/email_address"
         android:inputType="textEmailAddress"
         android:textSize="15sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.199"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2" />
 
     <EditText
         android:id="@+id/editTextTextPassword"
@@ -81,11 +80,12 @@
         android:hint="@string/password"
         android:inputType="textPassword"
         android:textSize="15sp"
-        app:layout_constraintBottom_toTopOf="@+id/signInbutton"
-        app:layout_constraintEnd_toStartOf="@+id/titleImage"
-        app:layout_constraintHorizontal_bias="0.74"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.199"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.332" />
 
     <Button
         android:id="@+id/registerButton"

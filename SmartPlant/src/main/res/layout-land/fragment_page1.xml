@@ -22,19 +22,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.026" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/pepermintPlant"
-        android:layout_width="393dp"
-        android:layout_height="381dp"
+        android:layout_width="301dp"
+        android:layout_height="230dp"
         android:contentDescription="@string/planttype"
         android:src="@drawable/plantstatus"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.354" />
+        app:layout_constraintVertical_bias="0.226" />
 
     <TextView
         android:id="@+id/dobPlant"
@@ -45,11 +45,12 @@
         android:text="@string/planted_30_days_ago"
         android:textColor="#070707"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/pepermintPlant"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.722"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.381" />
 
     <Button
         android:id="@+id/growthButton"
@@ -60,10 +61,10 @@
         android:textColor="#37474F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.114"
+        app:layout_constraintHorizontal_bias="0.11"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.82" />
+        app:layout_constraintVertical_bias="0.707" />
 
     <Button
         android:id="@+id/tempsButton"
@@ -74,10 +75,10 @@
         android:textColor="#37474F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.885"
+        app:layout_constraintHorizontal_bias="0.941"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.82"
+        app:layout_constraintVertical_bias="0.707"
         tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
 
     <Button
@@ -92,22 +93,23 @@
         app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.82"
+        app:layout_constraintVertical_bias="0.707"
         tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="146dp"
         android:layout_height="47dp"
-        android:layout_marginTop="88dp"
         android:text="@string/peppermint"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.17" />
 
     <TextView
         android:id="@+id/growthPlant"
@@ -118,11 +120,12 @@
         android:text="@string/growth_90"
         android:textColor="#070707"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/pepermintPlant"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.324"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.926" />
+        app:layout_constraintVertical_bias="0.374" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
