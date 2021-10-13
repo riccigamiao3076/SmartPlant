@@ -4,9 +4,12 @@
 // Ricci Gamiao (N01363076)
 package ca.greenlypebble.it.smartplant;
 
+import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -22,6 +25,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -32,16 +37,20 @@ import ca.greenlypebble.it.smartplant.ui.home.Page1;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final int MY_PERMISSIONS_REQUEST_CAMERA = 100;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         BottomNavigationView navView = findViewById(R.id.nav_view);
+
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
                 .build();
+
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
@@ -64,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -73,9 +83,11 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        //Intent cam;
         switch (item.getItemId()){
             case R.id.cameraMenu:
-                Toast.makeText(this, "Camera Selected", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Opening Camera", Toast.LENGTH_SHORT).show();
+                openCamera();
             break;
             case R.id.feedbackMenu:
                 Toast.makeText(this, "Feedback Selected", Toast.LENGTH_SHORT).show();
@@ -87,10 +99,14 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Settings Selected", Toast.LENGTH_SHORT).show();
             default:
                 return super.onOptionsItemSelected(item);
-
         }
 
         return false;
+    }
+
+    public void openCamera() {
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivity(intent);
     }
 
     //Exit Message.
