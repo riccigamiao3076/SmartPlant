@@ -42,14 +42,14 @@
         android:id="@+id/sOBtn"
         android:layout_width="119dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="68dp"
         android:backgroundTint="#F44336"
         android:text="@string/signOut"
         android:textAlignment="center"
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.959"
+        app:layout_constraintHorizontal_bias="0.941"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -64,7 +64,7 @@
         app:layout_constraintHorizontal_bias="0.069"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.912" />
+        app:layout_constraintVertical_bias="0.898" />
 
     <Button
         android:id="@+id/abtBtn"
