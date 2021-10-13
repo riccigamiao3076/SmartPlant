@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#9C8BC34A"
+    tools:context=".ui.dashboard.DashboardFragment">
+
+    <TextView
+        android:id="@+id/dashName"
+        android:layout_width="335dp"
+        android:layout_height="79dp"
+        android:fontFamily="casual"
+        android:gravity="center"
+        android:text="@string/dashTitle"
+        android:textColor="#503F6E"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/nav_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.026" />
+
+    <ImageButton
+        android:id="@+id/learnButton"
+        android:layout_width="162dp"
+        android:layout_height="104dp"
+        android:layout_marginStart="16dp"
+        android:backgroundTint="#9C8BC34A"
+        android:contentDescription="@string/learnplants"
+        android:scaleType="fitXY"
+        android:src="@drawable/learnbutton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.247"
+        app:layout_constraintStart_toEndOf="@+id/historyButton"
+        app:layout_constraintTop_toBottomOf="@+id/healthButton"
+        app:layout_constraintVertical_bias="0.156"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,ImageContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/historyButton"
+        android:layout_width="162dp"
+        android:layout_height="104dp"
+        android:backgroundTint="#9C8BC34A"
+        android:contentDescription="@string/planthistory"
+        android:scaleType="fitXY"
+        android:src="@drawable/historybutton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.325"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sensorsButton"
+        app:layout_constraintVertical_bias="0.156"
+        tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/healthButton"
+        android:layout_width="163dp"
+        android:layout_height="97dp"
+        android:backgroundTint="#9C8BC34A"
+        android:contentDescription="@string/planthealth"
+        android:scaleType="fitXY"
+        android:src="@drawable/planthealthbutton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.298"
+        app:layout_constraintStart_toEndOf="@+id/sensorsButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2"
+        tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/sensorsButton"
+        android:layout_width="163dp"
+        android:layout_height="97dp"
+        android:backgroundTint="#9C8BC34A"
+        android:contentDescription="@string/sensorsButton"
+        android:scaleType="fitXY"
+        android:src="@drawable/sensorbutton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.323"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.201"
+        tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
