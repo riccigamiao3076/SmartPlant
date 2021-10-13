@@ -4,12 +4,8 @@
 // Ricci Gamiao (N01363076)
 package ca.greenlypebble.it.smartplant;
 
-import android.Manifest;
-import android.content.ClipData;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -26,7 +22,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -36,10 +31,6 @@ import ca.greenlypebble.it.smartplant.ui.dashboard.DashboardFragment;
 import ca.greenlypebble.it.smartplant.ui.home.Page1;
 
 public class MainActivity extends AppCompatActivity {
-
-    private int openCamOne = 1;
-
-    MenuItem openCam;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         soilMoisture.setValue("Soil Moisture: 50%");
         lightLevels.setValue("Light levels: 500 Lumens");
         motionSensor.setValue("Motion sensor: Active");
+
     }
 
     @Override
@@ -83,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.cameraMenu:
-                requestStoragePermission();
+                Toast.makeText(this, "Camera Selected", Toast.LENGTH_SHORT).show();
             break;
             case R.id.feedbackMenu:
                 Toast.makeText(this, "Feedback Selected", Toast.LENGTH_SHORT).show();
@@ -101,49 +93,7 @@ public class MainActivity extends AppCompatActivity {
         return false;
     }
 
-    private void requestStoragePermission() {
-        if (ActivityCompat.shouldShowRequestPermissionRationale(this,
-                Manifest.permission.READ_EXTERNAL_STORAGE)) {
-
-
-            new AlertDialog.Builder(this)
-
-                    .setMessage("Allow Smart Plant to open Camera?")
-                    .setPositiveButton("Allow", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            ActivityCompat.requestPermissions(MainActivity.this,
-                                    new String[] {Manifest.permission.READ_EXTERNAL_STORAGE}, openCamOne);
-                        }
-                    })
-                    .setNegativeButton("Deny", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.dismiss();
-                        }
-                    })
-                    .create().show();
-
-        } else {
-            ActivityCompat.requestPermissions(this,
-                    new String[] {Manifest.permission.READ_EXTERNAL_STORAGE}, openCamOne);
-        }
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int theCode, @NonNull String[] thePer, @NonNull int[] theResult) {
-        super.onRequestPermissionsResult(theCode, thePer, theResult);
-        if (theCode == openCamOne) {
-            if (theResult.length > 0 && theResult[0] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(this, "Permission Granted", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
-                startActivity(intent);
-            } else {
-                Toast.makeText(this, "Permission Denied", Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
-
+    //Exit Message.
     @Override
     public void onBackPressed() {
         new AlertDialog.Builder(this)
