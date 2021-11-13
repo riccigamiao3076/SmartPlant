@@ -13,10 +13,9 @@
         android:theme="@style/Theme.SmartPlant">
         <activity
             android:name=".RatePopActivity"
-            android:theme="@style/PopRate"
+            android:exported="false"
             android:label="Rate App"
-
-            android:exported="false" />
+            android:theme="@style/PopRate" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name">
