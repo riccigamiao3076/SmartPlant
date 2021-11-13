@@ -38,6 +38,10 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.GoogleLoginActivity">
+
+        </activity>
 
         <meta-data
             android:name="preloaded_fonts"
