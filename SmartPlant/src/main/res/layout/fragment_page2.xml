@@ -70,7 +70,7 @@
         app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toEndOf="@+id/sensorsButton"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.328"
+        app:layout_constraintVertical_bias="0.314"
         tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -86,7 +86,7 @@
         app:layout_constraintHorizontal_bias="0.069"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.328"
+        app:layout_constraintVertical_bias="0.314"
         tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
 
 
