@@ -49,5 +49,7 @@
     <string name="peppermint">Peppermint</string>
     <string name="portrait_lock">Portrait Lock</string>
     <string name="accavatar">accAvatar</string>
-
+    <string name="logo">logo</string>
+    <string name="googlelogin">Google Login</string>
+    <string name="web_client_id" translatable="false">349442084520-1nng74hadef4o0i3saaqhkb49ukdtf90.apps.googleusercontent.com</string>
 </resources>

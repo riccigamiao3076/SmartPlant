@@ -5,16 +5,22 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import ca.greenlypebble.it.smartplant.ui.GoogleLoginActivity;
+
 public class LogInActivity extends Activity {
 
     Button signIn;
+    ImageButton googleLogIn;
     EditText emailAdd, passWord;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +30,17 @@ public class LogInActivity extends Activity {
         signIn = (Button) findViewById(R.id.signInbutton);
         emailAdd = (EditText) findViewById(R.id.editTextTextEmailAddress);
         passWord = (EditText) findViewById(R.id.editTextTextPassword);
+        googleLogIn = (ImageButton) findViewById(R.id.googleLogin);
+
+
+        //Google Sign In
+        googleLogIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LogInActivity.this, GoogleLoginActivity.class);
+                startActivity(intent);
+            }
+        });
 
         signIn.setOnClickListener(v -> {
             final String

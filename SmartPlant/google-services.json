@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "349442084520-30ar2ndis9mjovp77jmc9iqmfi52ng86.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ca.greenlypebble.it.smartplant",
+            "certificate_hash": "5fe0223a746bb4549b94c3c3b770879d7353ff05"
+          }
+        },
+        {
           "client_id": "349442084520-1nng74hadef4o0i3saaqhkb49ukdtf90.apps.googleusercontent.com",
           "client_type": 3
         }
