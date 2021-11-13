@@ -7,6 +7,7 @@ package ca.greenlypebble.it.smartplant.ui.notifications;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.LayoutInflater;
@@ -73,6 +74,9 @@ public class NotificationsFragment extends Fragment {
                 alertDialogBuilder.setPositiveButton("Call", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        Intent intentCall=new Intent(Intent.ACTION_DIAL);
+                        intentCall.setData(Uri.parse("tel:6475718154"));
+                        startActivity(intentCall);
 
                     }
                 });
@@ -80,7 +84,11 @@ public class NotificationsFragment extends Fragment {
                 alertDialogBuilder.setNegativeButton("Email", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                    }
+                        Intent intentMail = new Intent(Intent.ACTION_SENDTO);
+                        String[] recipients={"smartplant@gmail.com"};
+                        intentMail.setType("text/html");
+                        intentMail.setPackage("com.google.android.gmail");
+                        startActivity(Intent.createChooser(intentMail, "Send mail"));                    }
                 });
 
                 alertDialogBuilder.setNeutralButton("Later", new DialogInterface.OnClickListener() {
