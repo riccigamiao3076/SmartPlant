@@ -24,11 +24,12 @@ import androidx.lifecycle.ViewModelProvider;
 import ca.greenlypebble.it.smartplant.LogInActivity;
 import ca.greenlypebble.it.smartplant.MainActivity;
 import ca.greenlypebble.it.smartplant.R;
+import ca.greenlypebble.it.smartplant.RatePopActivity;
 
 public class NotificationsFragment extends Fragment {
 
 
-    Button myProf,
+    Button  myProf,
             idNumber,
             prefer,
             cntctUs,
@@ -53,6 +54,14 @@ public class NotificationsFragment extends Fragment {
         signOut = (Button) root.findViewById(R.id.sOBtn);
         portraitLock = (Button) root.findViewById(R.id.portraitButton);
 
+        rateApp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getContext(), RatePopActivity.class);
+                startActivity(i);
+            }
+        });
+
         portraitLock.setOnClickListener(v -> getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT));
 
 
@@ -62,6 +71,8 @@ public class NotificationsFragment extends Fragment {
 
         });
         return root;
+
+
     }
 
     private void alertSignOut() {
