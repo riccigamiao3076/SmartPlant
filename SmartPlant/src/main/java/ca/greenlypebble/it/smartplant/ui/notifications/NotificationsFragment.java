@@ -80,7 +80,6 @@ public class NotificationsFragment extends Fragment {
                 alertDialogBuilder.setNegativeButton("Email", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent openMail = new Intent(Intent.ACTION_SENDTO);
                     }
                 });
 
