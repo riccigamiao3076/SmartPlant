@@ -5,9 +5,12 @@
 package ca.greenlypebble.it.smartplant;
 
 import android.Manifest;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.Menu;
@@ -26,10 +29,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+
+import java.nio.channels.Channel;
 
 import ca.greenlypebble.it.smartplant.ui.dashboard.DashboardFragment;
 import ca.greenlypebble.it.smartplant.ui.home.Page1;
@@ -37,11 +44,19 @@ import ca.greenlypebble.it.smartplant.ui.home.Page1;
 public class MainActivity extends AppCompatActivity {
 
     private int openCamOne = 1;
+    Button ligthBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            NotificationChannel channel = new NotificationChannel("Notification", "Notification", NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(channel);
+        }
+
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -51,6 +66,26 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
+
+        //Notifications
+        ligthBtn = findViewById(R.id.lightButton);
+
+        ligthBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity.this,"Notification");
+                builder.setContentTitle("Light Notification");
+                builder.setContentText("Lights turned on");
+                builder.setSmallIcon(R.drawable.ic_launcher_foreground);
+                builder.setAutoCancel(true);
+
+                NotificationManagerCompat managerCompat = NotificationManagerCompat.from(MainActivity.this);
+                managerCompat.notify(1,builder.build());
+
+
+            }
+        });
+
 
         //Firebase Database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -69,6 +104,11 @@ public class MainActivity extends AppCompatActivity {
         motionSensor.setValue("Motion sensor: Active");
 
     }
+
+
+
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

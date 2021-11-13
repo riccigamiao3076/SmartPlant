@@ -40,7 +40,7 @@
 
     <Button
         android:id="@+id/sOBtn"
-        android:layout_width="119dp"
+        android:layout_width="123dp"
         android:layout_height="48dp"
         android:layout_marginBottom="60dp"
         android:backgroundTint="#F44336"
@@ -61,7 +61,7 @@
         android:textColor="#616161"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.069"
+        app:layout_constraintHorizontal_bias="0.116"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.912" />
