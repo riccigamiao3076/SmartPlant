@@ -23,6 +23,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 import ca.greenlypebble.it.smartplant.LogInActivity;
+import ca.greenlypebble.it.smartplant.MainActivity;
 import ca.greenlypebble.it.smartplant.R;
 
 public class GoogleLoginActivity extends LogInActivity {
@@ -102,7 +103,7 @@ public class GoogleLoginActivity extends LogInActivity {
     }
 
     private void updateUI(FirebaseUser user) {
-        Intent intent = new Intent(GoogleLoginActivity.this,LogInActivity.class);
+        Intent intent = new Intent(GoogleLoginActivity.this, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
