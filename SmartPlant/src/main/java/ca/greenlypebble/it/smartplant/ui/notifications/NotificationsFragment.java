@@ -8,21 +8,18 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import ca.greenlypebble.it.smartplant.LogInActivity;
-import ca.greenlypebble.it.smartplant.MainActivity;
 import ca.greenlypebble.it.smartplant.R;
 import ca.greenlypebble.it.smartplant.RatePopActivity;
 
@@ -57,8 +54,43 @@ public class NotificationsFragment extends Fragment {
         rateApp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getContext(), RatePopActivity.class);
-                startActivity(i);
+                Intent ratePopup = new Intent(getContext(), RatePopActivity.class);
+                startActivity(ratePopup);
+            }
+        });
+
+        cntctUs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                contactOptions();
+            }
+
+            private void contactOptions() {
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getContext());
+                alertDialogBuilder.setTitle("Contact Us");
+                alertDialogBuilder.setMessage("You can call or email us now.");
+
+                alertDialogBuilder.setPositiveButton("Call", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+
+                alertDialogBuilder.setNegativeButton("Email", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                });
+
+                alertDialogBuilder.setNeutralButton("Later", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+                alertDialogBuilder.show();
             }
         });
 
@@ -72,29 +104,28 @@ public class NotificationsFragment extends Fragment {
         });
         return root;
 
-
     }
 
-    private void alertSignOut() {
+            private void alertSignOut() {
 
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getContext());
-        alertDialogBuilder.setTitle("Are you sure?");
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getContext());
+                alertDialogBuilder.setTitle("Are you sure?");
 
-        alertDialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                Intent intent = new Intent(getActivity(), LogInActivity.class);
-                                startActivity(intent);
-                            }
-                        });
+                alertDialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        Intent intent = new Intent(getActivity(), LogInActivity.class);
+                                        startActivity(intent);
+                                    }
+                                });
 
-        alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
+                alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+                        alertDialogBuilder.show();
             }
-        });
-
-                alertDialogBuilder.show();
-    }
 }
