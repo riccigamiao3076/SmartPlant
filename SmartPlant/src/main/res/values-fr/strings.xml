@@ -55,5 +55,6 @@
     <string name="update_plant">Update Plant</string>
     <string name="plant_name">Plant Name:</string>
     <string name="read_name">Read Name</string>
+    <string name="statusText" />
 
 </resources>

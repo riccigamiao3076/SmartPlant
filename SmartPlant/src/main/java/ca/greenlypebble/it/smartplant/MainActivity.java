@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -45,9 +46,11 @@ public class MainActivity extends AppCompatActivity {
     private int openCamOne = 1;
     Button ligthBtn;
     private DatabaseReference rootDatabaseref;
+    private DatabaseReference databaseReference;
     private Button readName;
     private Button updateBtn;
     private TextView plantName;
+    private TextView status;
     private EditText updateName;
 
 
@@ -125,6 +128,7 @@ public class MainActivity extends AppCompatActivity {
         plantName = findViewById(R.id.smartPlant);
         updateBtn = findViewById(R.id.updatePlant);
         updateName = findViewById(R.id.plantNameUpdate);
+        status = findViewById(R.id.statusText);
 
         rootDatabaseref = FirebaseDatabase.getInstance().getReference().child("Plant Name");
 
@@ -188,7 +192,30 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Feedback Selected", Toast.LENGTH_SHORT).show();
             break;
             case R.id.statusMenu:
-                Toast.makeText(this, "Status Selected", Toast.LENGTH_SHORT).show();
+                databaseReference = FirebaseDatabase.getInstance().getReference().child("Status");
+                databaseReference.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if(snapshot.exists())
+                        {
+                            String data = snapshot.getValue().toString();
+                            status.setText(data);
+                            new Handler().postDelayed(new Runnable() {
+
+                                @Override
+                                public void run() {
+                                    status.setText("");
+                                }
+                            }, 4000 );//time in milisecond minimizes
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        System.out.println("The database failed: ");
+                    }
+                });
+
             break;
             case R.id.settingMenu:
                 Toast.makeText(this, "Settings Selected", Toast.LENGTH_SHORT).show();
