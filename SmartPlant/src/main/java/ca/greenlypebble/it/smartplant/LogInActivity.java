@@ -6,15 +6,23 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 import ca.greenlypebble.it.smartplant.ui.GoogleLoginActivity;
 
@@ -26,7 +34,10 @@ public class LogInActivity extends Activity {
     CheckBox remember;
     CheckBox mCheckBoxRemember;
     SharedPreferences mPrefs;
+    TextView signUp;
     final String PREFS_NAME = "PrefsFile";
+
+    FirebaseAuth fBase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,13 +47,14 @@ public class LogInActivity extends Activity {
         mPrefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
 
         signIn = (Button) findViewById(R.id.signInbutton);
+        signUp = (TextView) findViewById(R.id.tViewSignUp);
         emailAdd = (EditText) findViewById(R.id.editTextTextEmailAddress);
         passWord = (EditText) findViewById(R.id.editTextTextPassword);
         googleLogIn = (ImageView) findViewById(R.id.googleLogin);
         mCheckBoxRemember = (CheckBox) findViewById(R.id.checkBoxRemember);
+        fBase = FirebaseAuth.getInstance();
 
         getPreferencesData();
-
 
         //Google Sign In
         googleLogIn.setOnClickListener(new View.OnClickListener() {
@@ -57,48 +69,40 @@ public class LogInActivity extends Activity {
             }
         });
 
-
         signIn.setOnClickListener(v -> {
-            final String
-                    checkEA = emailAdd.getText().toString(),
-                    checkPW = passWord.getText().toString();
+            String email = emailAdd.getText().toString();
+            String password = passWord.getText().toString();
 
-            if (checkEA.matches("admin") && checkPW.matches("admin")) {
+            if (TextUtils.isEmpty(email)) {
+                emailAdd.setError("Please enter your email");
+                emailAdd.requestFocus();
 
-                Intent intent = new Intent(LogInActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
-                Toast success = Toast.makeText(getApplicationContext(), "Sucessfully Signed in.", Toast.LENGTH_SHORT);
-                success.show();
+            } else if (TextUtils.isEmpty(password)) {
+                passWord.setError("Please enter your password");
+                passWord.requestFocus();
+
+            } else {
+                fBase.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(LogInActivity.this, "Signed in successful", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(LogInActivity.this, MainActivity.class));
+                        } else {
+                            Toast.makeText(LogInActivity.this, "Sign in error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
             }
-
-            else if (checkEA.matches("")) {
-                Toast errorM = Toast.makeText(getApplicationContext(), "Please Valid Username.", Toast.LENGTH_SHORT);
-                errorM.show();
-            }
-
-            else if (checkPW.matches("")) {
-                Toast errorM = Toast.makeText(getApplicationContext(), "Please Enter Password.", Toast.LENGTH_SHORT);
-                errorM.show();
-            }
-
-            else {
-                errorM();
-            }
-            if (mCheckBoxRemember.isChecked()) {
-                Boolean boolIsChecked = mCheckBoxRemember.isChecked();
-                SharedPreferences.Editor editor = mPrefs.edit();
-                editor.putString("pref_name", checkEA);
-                editor.putString("pref_pass", checkPW);
-                editor.putBoolean("pref_check", boolIsChecked);
-                editor.apply();
-                Toast.makeText(getApplicationContext(),"Settings have been saved",
-                        Toast.LENGTH_SHORT).show();
-            }else{
-                mPrefs.edit().clear().apply();
-            }
-
         });
+
+        signUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LogInActivity.this, RegisterActivity.class));
+            }
+        });
+
     }
 
     private void getPreferencesData() {

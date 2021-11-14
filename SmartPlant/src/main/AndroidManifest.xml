@@ -12,11 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartPlant">
         <activity
-            android:name=".RatePopActivity"
-            android:theme="@style/PopRate"
-            android:label="Rate App"
-
+            android:name=".RegisterActivity"
             android:exported="false" />
+        <activity
+            android:name=".RatePopActivity"
+            android:exported="false"
+            android:label="Rate App"
+            android:theme="@style/PopRate" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name">
@@ -38,10 +40,7 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ui.GoogleLoginActivity">
-
-        </activity>
+        <activity android:name=".ui.GoogleLoginActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

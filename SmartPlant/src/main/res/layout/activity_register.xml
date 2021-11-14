@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:padding="24dp"
     android:background="#ECFFDC"
-    tools:context=".LogInActivity">
+    tools:context=".RegisterActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -40,8 +40,8 @@
             android:layout_height="wrap_content"
             android:layout_marginVertical="16dp"
             android:gravity="center_horizontal"
-            android:text="Sign in"
-            android:textColor="@color/paleGreen"
+            android:text="Sign Up"
+            android:textColor="@color/green"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -52,7 +52,7 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editTextTextEmailAddress"
+                android:id="@+id/eTextEmailReg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Email"
@@ -67,7 +67,7 @@
             android:layout_marginTop="12dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editTextTextPassword"
+                android:id="@+id/eTextPassReg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Password"
@@ -75,12 +75,12 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/signInbutton"
+            android:id="@+id/bRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="Sign In"
-            app:backgroundTint="#8BC34A" />
+            android:text="Register"
+            app:backgroundTint="#4CAF50" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -92,15 +92,15 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Not registered yet?"
+                android:text="Already registered?"
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/tViewSignUp"
+                android:id="@+id/tvLoginHere"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
-                android:text="Sign Up"
+                android:text="Sign in"
                 android:textColor="@color/scarlet"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -108,23 +108,5 @@
         </LinearLayout>
 
     </LinearLayout>
-
-    <CheckBox
-        android:id="@+id/checkBoxRemember"
-        android:layout_width="156dp"
-        android:layout_height="37dp"
-        android:layout_marginBottom="24dp"
-        android:layout_gravity="center"
-        android:text="@string/remember_me" />
-
-    <ImageView
-        android:id="@+id/googleLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:clickable="true"
-        android:contentDescription="@string/googleLogin"
-        android:minHeight="25dp"
-        android:src="@drawable/google" />
 
 </LinearLayout>
