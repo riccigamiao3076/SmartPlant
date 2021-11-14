@@ -36,10 +36,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
+import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+
+import ca.greenlypebble.it.smartplant.ui.notifications.Page3;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -184,6 +187,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+
         switch (item.getItemId()){
             case R.id.cameraMenu:
                 requestStoragePermission();
@@ -218,6 +223,7 @@ public class MainActivity extends AppCompatActivity {
 
             break;
             case R.id.settingMenu:
+                setContentView(R.layout.fragment_page3);
                 Toast.makeText(this, "Settings Selected", Toast.LENGTH_SHORT).show();
             default:
                 return super.onOptionsItemSelected(item);
