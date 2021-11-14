@@ -24,8 +24,7 @@ public class DashboardFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        page2 =
-                new ViewModelProvider(this).get(Page2.class);
+        page2 = new ViewModelProvider(this).get(Page2.class);
         View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
 
         return root;
