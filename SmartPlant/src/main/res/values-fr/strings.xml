@@ -52,5 +52,8 @@
     <string name="logo">logo</string>
     <string name="googlelogin">Google Login</string>
     <string name="googleLogin">Google Login</string>
+    <string name="update_plant">Update Plant</string>
+    <string name="plant_name">Plant Name:</string>
+    <string name="read_name">Read Name</string>
 
 </resources>

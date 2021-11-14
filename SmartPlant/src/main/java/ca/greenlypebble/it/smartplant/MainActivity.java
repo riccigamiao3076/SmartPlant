@@ -18,13 +18,16 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -37,15 +40,15 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import java.nio.channels.Channel;
-
-import ca.greenlypebble.it.smartplant.ui.dashboard.DashboardFragment;
-import ca.greenlypebble.it.smartplant.ui.home.Page1;
-
 public class MainActivity extends AppCompatActivity {
 
     private int openCamOne = 1;
     Button ligthBtn;
+    private DatabaseReference rootDatabaseref;
+    private Button readName;
+    private Button updateBtn;
+    private TextView plantName;
+    private EditText updateName;
 
 
     @Override
@@ -68,6 +71,13 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
+
+
+
+
+
+
+
 
         //Notifications
         ligthBtn = findViewById(R.id.lightButton);
@@ -108,7 +118,53 @@ public class MainActivity extends AppCompatActivity {
         lightLevels.setValue("Light levels: 500 Lumens");
         motionSensor.setValue("Motion sensor: Active");
 
-    }
+
+
+        //Update Plant Name Database:
+        readName = findViewById(R.id.readNameBtn);
+        plantName = findViewById(R.id.smartPlant);
+        updateBtn = findViewById(R.id.updatePlant);
+        updateName = findViewById(R.id.plantNameUpdate);
+
+        rootDatabaseref = FirebaseDatabase.getInstance().getReference().child("Plant Name");
+
+        readName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rootDatabaseref.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if (snapshot.exists())
+                        {
+                            String data = snapshot.getValue().toString();
+                            plantName.setText(data);
+                        }
+                    }
+
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+            }
+        });
+
+
+        updateBtn.setOnClickListener(new View.OnClickListener()
+
+            {
+                @Override
+                public void onClick (View v){
+                String data = updateName.getText().toString();
+                rootDatabaseref.setValue(data);
+            }
+            });
+        }
+
+
+
+
 
 
 
