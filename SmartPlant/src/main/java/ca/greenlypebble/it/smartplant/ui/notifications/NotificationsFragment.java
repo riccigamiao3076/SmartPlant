@@ -34,7 +34,7 @@ public class NotificationsFragment extends Fragment {
     Button  myProf,
             idNumber,
             prefer,
-            cntctUs,
+            contactUs,
             about,
             rateApp,
             signOut,
@@ -51,7 +51,7 @@ public class NotificationsFragment extends Fragment {
         myProf = (Button) root.findViewById(R.id.mpBtn);
         idNumber = (Button) root.findViewById(R.id.idBtn);
         prefer = (Button) root.findViewById(R.id.prefBtn);
-        cntctUs = (Button) root.findViewById(R.id.cntBtn);
+        contactUs = (Button) root.findViewById(R.id.cntBtn);
         about = (Button) root.findViewById(R.id.abtBtn);
         rateApp = (Button) root.findViewById(R.id.rateBtn);
         signOut = (Button) root.findViewById(R.id.sOBtn);
@@ -78,7 +78,7 @@ public class NotificationsFragment extends Fragment {
             }
         });
 
-        cntctUs.setOnClickListener(new View.OnClickListener() {
+        contactUs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 contactOptions();
@@ -132,7 +132,7 @@ public class NotificationsFragment extends Fragment {
             private void alertSignOut() {
 
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getContext());
-                alertDialogBuilder.setTitle("Are you sure?");
+                alertDialogBuilder.setTitle("Are you sure you want to sign out?");
 
                 alertDialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                                     @Override
