@@ -26,7 +26,7 @@ public class HomeFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         page1 =
                 new ViewModelProvider(this).get(Page1.class);
-        View root = inflater.inflate(R.layout.fragment_page1, container, false);
+        View root = inflater.inflate(R.layout.fragment_home, container, false);
         final TextView textView = root.findViewById(R.id.text_home);
         page1.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override

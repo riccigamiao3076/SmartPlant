@@ -2,15 +2,13 @@
 //Patrick Gomulka (N01347564)
 //Erni Banaag (N01221990)
 //Ricci Gamiao (N01363076)
-package ca.greenlypebble.it.smartplant.ui.notifications;
+package ca.greenlypebble.it.smartplant.ui.account;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,7 +26,7 @@ import ca.greenlypebble.it.smartplant.LogInActivity;
 import ca.greenlypebble.it.smartplant.R;
 import ca.greenlypebble.it.smartplant.RatePopActivity;
 
-public class NotificationsFragment extends Fragment {
+public class AccountFragment extends Fragment {
 
 
     Button  myProf,
@@ -46,7 +44,7 @@ public class NotificationsFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
 
         new ViewModelProvider(this).get(Page3.class);
-        View root = inflater.inflate(R.layout.fragment_page3, container, false);
+        View root = inflater.inflate(R.layout.fragment_account, container, false);
 
         myProf = (Button) root.findViewById(R.id.mpBtn);
         idNumber = (Button) root.findViewById(R.id.idBtn);
