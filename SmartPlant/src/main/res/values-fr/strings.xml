@@ -51,5 +51,6 @@
     <string name="accavatar">accAvatar</string>
     <string name="logo">logo</string>
     <string name="googlelogin">Google Login</string>
+    <string name="googleLogin">Google Login</string>
 
 </resources>

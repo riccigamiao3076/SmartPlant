@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -18,7 +19,7 @@ import ca.greenlypebble.it.smartplant.ui.GoogleLoginActivity;
 public class LogInActivity extends Activity {
 
     Button signIn;
-    ImageButton googleLogIn;
+    ImageView googleLogIn;
     EditText emailAdd, passWord;
 
 
@@ -30,7 +31,7 @@ public class LogInActivity extends Activity {
         signIn = (Button) findViewById(R.id.signInbutton);
         emailAdd = (EditText) findViewById(R.id.editTextTextEmailAddress);
         passWord = (EditText) findViewById(R.id.editTextTextPassword);
-        googleLogIn = (ImageButton) findViewById(R.id.googleLogin);
+        googleLogIn = (ImageView) findViewById(R.id.googleLogin);
 
 
         //Google Sign In
