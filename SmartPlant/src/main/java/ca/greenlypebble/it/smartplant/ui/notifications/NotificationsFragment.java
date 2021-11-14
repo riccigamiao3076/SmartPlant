@@ -20,6 +20,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import ca.greenlypebble.it.smartplant.LogInActivity;
 import ca.greenlypebble.it.smartplant.R;
 import ca.greenlypebble.it.smartplant.RatePopActivity;
@@ -37,6 +39,7 @@ public class NotificationsFragment extends Fragment {
             portraitLock;
 
 
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
@@ -51,6 +54,19 @@ public class NotificationsFragment extends Fragment {
         rateApp = (Button) root.findViewById(R.id.rateBtn);
         signOut = (Button) root.findViewById(R.id.sOBtn);
         portraitLock = (Button) root.findViewById(R.id.portraitButton);
+
+        idNumber.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getContext());
+                alertDialogBuilder.setMessage(userID);
+
+                alertDialogBuilder.show();
+            }
+        });
 
         rateApp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,7 +129,6 @@ public class NotificationsFragment extends Fragment {
         return root;
 
     }
-
             private void alertSignOut() {
 
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getContext());

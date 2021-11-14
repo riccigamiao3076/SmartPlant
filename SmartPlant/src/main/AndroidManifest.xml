@@ -13,7 +13,8 @@
         android:theme="@style/Theme.SmartPlant">
         <activity
             android:name=".RegisterActivity"
-            android:exported="false" />
+            android:exported="false"
+            />
         <activity
             android:name=".RatePopActivity"
             android:exported="false"
