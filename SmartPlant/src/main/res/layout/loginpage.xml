@@ -22,10 +22,11 @@
         android:id="@+id/text_home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginBottom="24dp"
+        android:fontFamily="sans-serif-medium"
         android:text="@string/welcome_title"
-        android:textSize="15sp"
-        android:layout_gravity="center" />
+        android:textSize="15sp" />
 
     <LinearLayout
         android:layout_width="327dp"
@@ -40,7 +41,7 @@
             android:layout_marginVertical="16dp"
             android:gravity="center_horizontal"
             android:text="Sign in"
-            android:textColor="@color/teal_700"
+            android:textColor="@color/paleGreen"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -78,7 +79,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="Sign In" />
+            android:text="Sign In"
+            app:backgroundTint="#8BC34A" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -90,7 +92,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Not registered yet"
+                android:text="Not registered yet?"
                 android:textSize="16sp" />
 
             <TextView
@@ -99,7 +101,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
                 android:text="Sign Up"
-                android:textColor="@color/teal_700"
+                android:textColor="@color/scarlet"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 

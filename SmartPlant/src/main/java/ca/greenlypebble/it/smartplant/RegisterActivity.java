@@ -1,8 +1,8 @@
 package ca.greenlypebble.it.smartplant;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -13,11 +13,10 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class RegisterActivity extends AppCompatActivity {
+public class RegisterActivity extends Activity {
 
     EditText emailReg, passReg;
     TextView tvLoginHere;
@@ -33,7 +32,7 @@ public class RegisterActivity extends AppCompatActivity {
         emailReg = findViewById(R.id.eTextEmailReg);
         passReg = findViewById(R.id.eTextPassReg);
         tvLoginHere = findViewById(R.id.tvLoginHere);
-        bRegister = findViewById(R.id.btnRegister);
+        bRegister = findViewById(R.id.bRegister);
 
         mAuth = FirebaseAuth.getInstance();
 
