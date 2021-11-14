@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 public class RatePopActivity extends Activity {
 
     RatingBar rateBar;
