@@ -47,8 +47,8 @@ import ca.greenlypebble.it.smartplant.ui.notifications.Page3;
 public class MainActivity extends AppCompatActivity {
 
     private int openCamOne = 1;
-    Button ligthBtn;
-    private DatabaseReference rootDatabaseref;
+    Button lightBtn;
+    private DatabaseReference rootDatabaseRef;
     private DatabaseReference databaseReference;
     private Button readName;
     private Button updateBtn;
@@ -86,9 +86,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         //Notifications
-        ligthBtn = findViewById(R.id.lightButton);
+        lightBtn = findViewById(R.id.lightButton);
 
-        ligthBtn.setOnClickListener(new View.OnClickListener() {
+        lightBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity.this,"Notification");
@@ -133,12 +133,12 @@ public class MainActivity extends AppCompatActivity {
         updateName = findViewById(R.id.plantNameUpdate);
         status = findViewById(R.id.statusText);
 
-        rootDatabaseref = FirebaseDatabase.getInstance().getReference().child("Plant Name");
+        rootDatabaseRef = FirebaseDatabase.getInstance().getReference().child("Plant Name");
 
         readName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                rootDatabaseref.addValueEventListener(new ValueEventListener() {
+                rootDatabaseRef.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         if (snapshot.exists())
@@ -164,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick (View v){
                 String data = updateName.getText().toString();
-                rootDatabaseref.setValue(data);
+                rootDatabaseRef.setValue(data);
             }
             });
         }
@@ -211,7 +211,7 @@ public class MainActivity extends AppCompatActivity {
                                 public void run() {
                                     status.setText("");
                                 }
-                            }, 4000 );//time in milisecond minimizes
+                            }, 4000 );//time in millisecond minimizes
                         }
                     }
 
