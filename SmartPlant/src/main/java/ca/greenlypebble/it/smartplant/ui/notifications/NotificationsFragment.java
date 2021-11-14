@@ -7,9 +7,11 @@ package ca.greenlypebble.it.smartplant.ui.notifications;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -87,7 +89,7 @@ public class NotificationsFragment extends Fragment {
                 alertDialogBuilder.setTitle("Contact Us");
                 alertDialogBuilder.setMessage("You can call or email us now.");
 
-                alertDialogBuilder.setPositiveButton("Call", new DialogInterface.OnClickListener() {
+                alertDialogBuilder.setPositiveButton(Html.fromHtml("<font color='#0000FF'>Call</font>"), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Intent intentCall=new Intent(Intent.ACTION_DIAL);
@@ -97,23 +99,21 @@ public class NotificationsFragment extends Fragment {
                     }
                 });
 
-                alertDialogBuilder.setNegativeButton("Email", new DialogInterface.OnClickListener() {
+                alertDialogBuilder.setNegativeButton(Html.fromHtml("<font color='#0000FF'>Email</font>"), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Intent intentMail = new Intent(Intent.ACTION_SENDTO);
-                        String[] recipients={"smartplant@gmail.com"};
-                        intentMail.setType("text/html");
-                        intentMail.setPackage("com.google.android.gmail");
-                        startActivity(Intent.createChooser(intentMail, "Send mail"));                    }
+                        intentMail.setData(Uri.parse("mailto:"));
+                        intentMail.putExtra(Intent.EXTRA_EMAIL, new String[]{"smartplant@gmail.com"});
+                        startActivity(intentMail);                  }
                 });
 
-                alertDialogBuilder.setNeutralButton("Later", new DialogInterface.OnClickListener() {
+                alertDialogBuilder.setNeutralButton(Html.fromHtml("<font color='#FF0000'>Cancel</font>"), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.cancel();
                     }
                 });
-
                 alertDialogBuilder.show();
             }
         });
