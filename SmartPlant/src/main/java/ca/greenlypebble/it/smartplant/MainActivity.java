@@ -45,7 +45,8 @@ import androidx.navigation.ui.NavigationUI;
 import ca.greenlypebble.it.smartplant.ui.notifications.Page3;
 
 public class MainActivity extends AppCompatActivity {
-
+//The two design patterns used are Structural and Behavioral design patterns.
+    //The two design principles used are Keep it simple, Stupid!, and Don't Repeat Yourself.
     private int openCamOne = 1;
     Button lightBtn;
     private DatabaseReference rootDatabaseRef;
