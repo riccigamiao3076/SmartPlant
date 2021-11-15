@@ -50,20 +50,20 @@ public class RegisterActivity extends Activity {
         String password = passReg.getText().toString();
 
         if (TextUtils.isEmpty(email)){
-            emailReg.setError("Please enter your Email");
+            emailReg.setError(getString(R.string.enterEmail));
             emailReg.requestFocus();
         }else if (TextUtils.isEmpty(password)){
-            passReg.setError("Please enter your Password");
+            passReg.setError(getString(R.string.enterPassword));
             passReg.requestFocus();
         }else{
             mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()){
-                        Toast.makeText(RegisterActivity.this, "Registration successful", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterActivity.this, R.string.registerSuccess, Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(RegisterActivity.this, LogInActivity.class));
                     }else{
-                        Toast.makeText(RegisterActivity.this, "Registration Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterActivity.this, getString(R.string.registerError) + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 }
             });
