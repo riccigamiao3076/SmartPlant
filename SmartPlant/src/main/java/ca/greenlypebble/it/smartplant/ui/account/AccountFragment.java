@@ -45,6 +45,17 @@ public class AccountFragment extends Fragment {
         portraitLock = (Button) root.findViewById(R.id.portraitButton);
         signOut = (Button) root.findViewById(R.id.sOBtn);
 
+        myProf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String userEmail = FirebaseAuth.getInstance().getCurrentUser().getEmail();
+
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getContext());
+                alertDialogBuilder.setMessage(userEmail);
+
+                alertDialogBuilder.show();
+            }
+        });
         idNumber.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
