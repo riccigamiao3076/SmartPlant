@@ -27,19 +27,6 @@
         app:layout_constraintVertical_bias="0.024" />
 
     <Button
-        android:id="@+id/rateBtn"
-        android:layout_width="378dp"
-        android:layout_height="67dp"
-        android:backgroundTint="#5EFFFFFF"
-        android:text="@string/rateTheApp"
-        android:textAlignment="textStart"
-        android:textColor="#A9000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.484"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/abtBtn" />
-
-    <Button
         android:id="@+id/sOBtn"
         android:layout_width="123dp"
         android:layout_height="48dp"
@@ -68,63 +55,20 @@
         app:layout_constraintVertical_bias="0.898" />
 
     <Button
-        android:id="@+id/abtBtn"
-        android:layout_width="378dp"
-        android:layout_height="67dp"
-        android:backgroundTint="#5EFFFFFF"
-        android:text="@string/about"
-        android:textAlignment="textStart"
-        android:textColor="#33691E"
-        app:layout_constraintBottom_toTopOf="@+id/rateBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.524"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cntBtn"
-        tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
-
-    <Button
         android:id="@+id/mpBtn"
         android:layout_width="378dp"
         android:layout_height="67dp"
-        android:layout_marginTop="124dp"
         android:backgroundTint="#5EFFFFFF"
         android:text="@string/myProfile"
         android:textAlignment="textStart"
         android:textColor="#A9000000"
-        app:layout_constraintBottom_toTopOf="@+id/idBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.524"
+        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.197"
         app:rippleColor="#00FFFFFF" />
-
-    <Button
-        android:id="@+id/cntBtn"
-        android:layout_width="378dp"
-        android:layout_height="67dp"
-        android:backgroundTint="#5EFFFFFF"
-        android:text="@string/contactUs"
-        android:textAlignment="textStart"
-        android:textColor="#A9000000"
-        app:layout_constraintBottom_toTopOf="@+id/abtBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.524"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/prefBtn" />
-
-    <Button
-        android:id="@+id/idBtn"
-        android:layout_width="378dp"
-        android:layout_height="67dp"
-        android:backgroundTint="#5EFFFFFF"
-        android:text="@string/idNum"
-        android:textAlignment="textStart"
-        android:textColor="#A9000000"
-        app:layout_constraintBottom_toTopOf="@+id/prefBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.524"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mpBtn" />
 
     <Button
         android:id="@+id/prefBtn"
@@ -134,11 +78,73 @@
         android:text="@string/preferences"
         android:textAlignment="textStart"
         android:textColor="#A9000000"
-        app:layout_constraintBottom_toTopOf="@+id/cntBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.524"
+        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idBtn" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.411" />
+
+    <Button
+        android:id="@+id/rateBtn"
+        android:layout_width="378dp"
+        android:layout_height="67dp"
+        android:backgroundTint="#5EFFFFFF"
+        android:text="@string/rateTheApp"
+        android:textAlignment="textStart"
+        android:textColor="#A9000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.757" />
+
+    <Button
+        android:id="@+id/abtBtn"
+        android:layout_width="378dp"
+        android:layout_height="67dp"
+        android:backgroundTint="#5EFFFFFF"
+        android:text="@string/about"
+        android:textAlignment="textStart"
+        android:textColor="#33691E"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.525"
+        tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
+
+    <Button
+        android:id="@+id/cntBtn"
+        android:layout_width="378dp"
+        android:layout_height="67dp"
+        android:backgroundTint="#5EFFFFFF"
+        android:text="@string/contactUs"
+        android:textAlignment="textStart"
+        android:textColor="#A9000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.641" />
+
+    <Button
+        android:id="@+id/idBtn"
+        android:layout_width="378dp"
+        android:layout_height="67dp"
+        android:backgroundTint="#5EFFFFFF"
+        android:text="@string/idNum"
+        android:textAlignment="textStart"
+        android:textColor="#A9000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.31" />
 
     <ImageView
         android:id="@+id/accAvatar"
