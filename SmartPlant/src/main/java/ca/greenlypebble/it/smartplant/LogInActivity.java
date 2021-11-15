@@ -41,11 +41,11 @@ public class LogInActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loginpage);
 
         mPrefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
-
         signIn = (Button) findViewById(R.id.signInbutton);
         signUp = (TextView) findViewById(R.id.tViewSignUp);
         emailAdd = (EditText) findViewById(R.id.editTextTextEmailAddress);
