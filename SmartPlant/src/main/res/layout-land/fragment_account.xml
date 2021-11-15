@@ -21,113 +21,20 @@
         app:layout_constraintHorizontal_bias="0.973"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/accAvatar"
-        app:layout_constraintVertical_bias="0.345" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/portraitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:onClick="@string/portrait_lock"
         android:text="@string/portrait_lock"
         android:textColor="#616161"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/abtBtn"
-        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498" />
-
-    <Button
-        android:id="@+id/idBtn"
-        android:layout_width="378dp"
-        android:layout_height="67dp"
-        android:backgroundTint="#5EFFFFFF"
-        android:text="@string/idNum"
-        android:textAlignment="textStart"
-        android:textColor="#A9000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.2" />
-
-    <Button
-        android:id="@+id/mpBtn"
-        android:layout_width="378dp"
-        android:layout_height="67dp"
-        android:backgroundTint="#5EFFFFFF"
-        android:text="@string/myProfile"
-        android:textAlignment="textStart"
-        android:textColor="#A9000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.005"
-        app:rippleColor="#00FFFFFF" />
-
-    <Button
-        android:id="@+id/prefBtn"
-        android:layout_width="378dp"
-        android:layout_height="67dp"
-        android:backgroundTint="#5EFFFFFF"
-        android:text="@string/preferences"
-        android:textAlignment="textStart"
-        android:textColor="#A9000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.395" />
-
-    <Button
-        android:id="@+id/cntBtn"
-        android:layout_width="378dp"
-        android:layout_height="67dp"
-        android:backgroundTint="#5EFFFFFF"
-        android:text="@string/contactUs"
-        android:textAlignment="textStart"
-        android:textColor="#A9000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.59" />
-
-    <Button
-        android:id="@+id/abtBtn"
-        android:layout_width="378dp"
-        android:layout_height="67dp"
-        android:backgroundTint="#5EFFFFFF"
-        android:text="@string/about"
-        android:textAlignment="textStart"
-        android:textColor="#33691E"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.784"
-        tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
-
-    <Button
-        android:id="@+id/rateBtn"
-        android:layout_width="378dp"
-        android:layout_height="67dp"
-        android:backgroundTint="#5EFFFFFF"
-        android:text="@string/rateTheApp"
-        android:textAlignment="textStart"
-        android:textColor="#A9000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.895" />
 
     <TextView
         android:id="@+id/smartPlant"
@@ -147,6 +54,82 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.151" />
+
+    <Button
+        android:id="@+id/mpBtn"
+        android:layout_width="378dp"
+        android:layout_height="67dp"
+        android:backgroundTint="#5EFFFFFF"
+        android:text="@string/myProfile"
+        android:textAlignment="textStart"
+        android:textColor="#A9000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.566"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.142"
+        app:rippleColor="#00FFFFFF" />
+
+    <Button
+        android:id="@+id/rateBtn"
+        android:layout_width="378dp"
+        android:layout_height="67dp"
+        android:backgroundTint="#5EFFFFFF"
+        android:text="@string/rateTheApp"
+        android:textAlignment="textStart"
+        android:textColor="#A9000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.566"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.694" />
+
+    <Button
+        android:id="@+id/abtBtn"
+        android:layout_width="378dp"
+        android:layout_height="67dp"
+        android:backgroundTint="#5EFFFFFF"
+        android:text="@string/about"
+        android:textAlignment="textStart"
+        android:textColor="#33691E"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.566"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.889"
+        tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
+
+    <Button
+        android:id="@+id/cntBtn"
+        android:layout_width="378dp"
+        android:layout_height="67dp"
+        android:backgroundTint="#5EFFFFFF"
+        android:text="@string/contactUs"
+        android:textAlignment="textStart"
+        android:textColor="#A9000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.566"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/idBtn"
+        android:layout_width="378dp"
+        android:layout_height="67dp"
+        android:backgroundTint="#5EFFFFFF"
+        android:text="@string/idNum"
+        android:textAlignment="textStart"
+        android:textColor="#A9000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.566"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.331" />
 
     <ImageView
         android:id="@+id/accAvatar"
