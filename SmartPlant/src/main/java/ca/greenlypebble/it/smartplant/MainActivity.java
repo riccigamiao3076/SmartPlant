@@ -151,10 +151,6 @@ public class MainActivity extends AppCompatActivity {
             });
         }
 
-
-
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -164,7 +160,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
 
         switch (item.getItemId()){
             case R.id.cameraMenu:
@@ -205,7 +200,6 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Settings Selected", Toast.LENGTH_SHORT).show();
             default:
                 return super.onOptionsItemSelected(item);
-
         }
 
         return false;
