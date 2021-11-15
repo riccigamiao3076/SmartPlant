@@ -85,8 +85,8 @@ public class AccountFragment extends Fragment {
 
             private void contactOptions() {
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getContext());
-                alertDialogBuilder.setTitle("Contact Us");
-                alertDialogBuilder.setMessage("You can call or email us now.");
+                alertDialogBuilder.setTitle(R.string.contactUS);
+                alertDialogBuilder.setMessage(R.string.callOrEmail);
 
                 alertDialogBuilder.setPositiveButton(Html.fromHtml("<font color='#0000FF'>Call</font>"), new DialogInterface.OnClickListener() {
                     @Override
@@ -129,9 +129,9 @@ public class AccountFragment extends Fragment {
             private void alertSignOut() {
 
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getContext());
-                alertDialogBuilder.setTitle("Are you sure you want to sign out?");
+                alertDialogBuilder.setTitle(R.string.sureSignOut);
 
-                alertDialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                alertDialogBuilder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
                                         Intent intent = new Intent(getActivity(), LogInActivity.class);
@@ -139,7 +139,7 @@ public class AccountFragment extends Fragment {
                                     }
                                 });
 
-                alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                alertDialogBuilder.setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.cancel();
