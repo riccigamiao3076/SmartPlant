@@ -28,7 +28,6 @@ import ca.greenlypebble.it.smartplant.RatePopActivity;
 
 public class AccountFragment extends Fragment {
 
-
     Button  myProf,
             idNumber,
             prefer,
@@ -37,8 +36,6 @@ public class AccountFragment extends Fragment {
             rateApp,
             signOut,
             portraitLock;
-
-
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -93,7 +90,6 @@ public class AccountFragment extends Fragment {
                         Intent intentCall=new Intent(Intent.ACTION_DIAL);
                         intentCall.setData(Uri.parse("tel:6475718154"));
                         startActivity(intentCall);
-
                     }
                 });
 
@@ -117,7 +113,6 @@ public class AccountFragment extends Fragment {
         });
 
         portraitLock.setOnClickListener(v -> getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT));
-
 
         signOut.setOnClickListener(v -> {
 
