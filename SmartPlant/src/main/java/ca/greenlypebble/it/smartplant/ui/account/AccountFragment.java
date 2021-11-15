@@ -100,9 +100,9 @@ public class AccountFragment extends Fragment {
                 alertDialogBuilder.setNegativeButton(Html.fromHtml("<font color='#0000FF'>Email</font>"), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent intentMail = new Intent(Intent.ACTION_SENDTO);
-                        intentMail.setData(Uri.parse("mailto:"));
-                        intentMail.putExtra(Intent.EXTRA_EMAIL, new String[]{"smartplant@gmail.com"});
+                        Intent intentMail = new Intent(Intent.ACTION_VIEW);
+                        Uri data = Uri.parse("mailto:smartplant@gmail.com");
+                        intentMail.setData(data);
                         startActivity(intentMail);                  }
                 });
 
