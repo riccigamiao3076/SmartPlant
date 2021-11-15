@@ -55,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView status;
     private EditText updateName;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,13 +76,6 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
-
-
-
-
-
-
-
         //Notifications
         lightBtn = findViewById(R.id.lightButton);
 
@@ -98,14 +90,8 @@ public class MainActivity extends AppCompatActivity {
 
                 NotificationManagerCompat managerCompat = NotificationManagerCompat.from(MainActivity.this);
                 managerCompat.notify(1,builder.build());
-
-
             }
         });
-
-
-
-
 
         //Firebase Database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -122,8 +108,6 @@ public class MainActivity extends AppCompatActivity {
         soilMoisture.setValue("Soil Moisture: 50%");
         lightLevels.setValue("Light levels: 500 Lumens");
         motionSensor.setValue("Motion sensor: Active");
-
-
 
         //Update Plant Name Database:
         readName = findViewById(R.id.readNameBtn);
@@ -155,7 +139,6 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
         });
-
 
         updateBtn.setOnClickListener(new View.OnClickListener()
 
