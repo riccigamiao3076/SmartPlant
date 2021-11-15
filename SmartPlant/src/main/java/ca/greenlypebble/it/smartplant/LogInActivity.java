@@ -78,7 +78,7 @@ public class LogInActivity extends Activity {
                 emailAdd.requestFocus();
 
             } else if (TextUtils.isEmpty(password)) {
-                passWord.setError("Please enter your password");
+                passWord.setError("@string/enterPassword");
                 passWord.requestFocus();
 
             } else {
@@ -86,10 +86,10 @@ public class LogInActivity extends Activity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(LogInActivity.this, "Signed in successful", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LogInActivity.this, R.string.signInSuccess, Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(LogInActivity.this, MainActivity.class));
                         } else {
-                            Toast.makeText(LogInActivity.this, "Sign in error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LogInActivity.this, getString(R.string.signInError) + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

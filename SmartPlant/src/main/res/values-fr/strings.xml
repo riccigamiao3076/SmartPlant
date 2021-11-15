@@ -61,5 +61,11 @@
     <string name="sureSignOut">Are you sure you want to sign out?</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
-
+    <string name="enterEmail">Please enter your Email</string>
+    <string name="enterPassword">Please enter your Password</string>
+    <string name="registerSuccess">Registration successful</string>
+    <string name="registerError">\"Registration Error: \"</string>
+    <string name="signInSuccess">Signed in successful</string>
+    <string name="signInError">\"Sign in error: \"</string>
+    <string name="googleSignIn">Signing in to Google...</string>
 </resources>

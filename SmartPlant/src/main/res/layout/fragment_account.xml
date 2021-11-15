@@ -30,7 +30,7 @@
         android:id="@+id/sOBtn"
         android:layout_width="123dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="84dp"
+        android:layout_marginBottom="88dp"
         android:backgroundTint="#F44336"
         android:text="@string/signOut"
         android:textAlignment="center"
@@ -50,7 +50,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.767" />
+        app:layout_constraintVertical_bias="0.781" />
 
     <Button
         android:id="@+id/mpBtn"

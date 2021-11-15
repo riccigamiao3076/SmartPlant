@@ -37,7 +37,7 @@ public class GoogleLoginActivity extends LogInActivity {
         super.onCreate(savedInstanceState);
 
         progressDialog=new ProgressDialog(this);
-        progressDialog.setMessage("Google Sign In...");
+        progressDialog.setMessage(getString(R.string.googleSignIn));
         progressDialog.show();
 
 
