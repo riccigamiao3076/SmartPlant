@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
         updateName = findViewById(R.id.plantNameUpdate);
         status = findViewById(R.id.statusText);
 
-        rootDatabaseRef = FirebaseDatabase.getInstance().getReference().child("Plant Name");
+        rootDatabaseRef = FirebaseDatabase.getInstance().getReference().child(getString(R.string.plantName));
 
         readName.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -166,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
                 requestStoragePermission();
             break;
             case R.id.feedbackMenu:
-                Toast.makeText(this, "Feedback Selected", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.feedbackSelected, Toast.LENGTH_SHORT).show();
                 feedbackDialog();
             break;
             case R.id.statusMenu:
@@ -190,14 +190,14 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
-                        System.out.println("The database failed: ");
+                        System.out.println(getString(R.string.databaseFailed));
                     }
                 });
 
             break;
             case R.id.settingMenu:
                 setContentView(R.layout.fragment_account);
-                Toast.makeText(this, "Settings Selected", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.settingSelected, Toast.LENGTH_SHORT).show();
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -207,9 +207,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void feedbackDialog() {
         new AlertDialog.Builder(this)
-                .setTitle("Hi, your feedback is important to us!")
-                .setMessage("Please go to Account and click the Rate App button to send us a feedback. Thank you!")
-                .setPositiveButton("Ok", (dialog, which) -> dialog.cancel())
+                .setTitle(R.string.feedbackImportant)
+                .setMessage(R.string.accountRateFeedback)
+                .setPositiveButton(R.string.ok, (dialog, which) -> dialog.cancel())
                 .show();
     }
 
@@ -218,15 +218,15 @@ public class MainActivity extends AppCompatActivity {
                 Manifest.permission.READ_EXTERNAL_STORAGE)) {
 
             new AlertDialog.Builder(this)
-                    .setMessage("Allow Smart Plant to open Camera?")
-                    .setPositiveButton("Allow", new DialogInterface.OnClickListener() {
+                    .setMessage(R.string.smartPlantOpenCam)
+                    .setPositiveButton(R.string.allow, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             ActivityCompat.requestPermissions(MainActivity.this,
                                     new String[] {Manifest.permission.READ_EXTERNAL_STORAGE}, openCamOne);
                         }
                     })
-                    .setNegativeButton("Deny", new DialogInterface.OnClickListener() {
+                    .setNegativeButton(R.string.deny, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             dialog.dismiss();
@@ -245,11 +245,11 @@ public class MainActivity extends AppCompatActivity {
         super.onRequestPermissionsResult(theCode, thePer, theResult);
         if (theCode == openCamOne) {
             if (theResult.length > 0 && theResult[0] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(this, "Permission Granted", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.permGrant, Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 startActivity(intent);
             } else {
-                Toast.makeText(this, "Permission Denied", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.permDeny, Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -259,10 +259,10 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
         new AlertDialog.Builder(this)
                 .setIcon(android.R.drawable.ic_dialog_alert)
-                .setTitle("Smart Plant")
+                .setTitle(R.string.smart_plant)
                 .setMessage(R.string.exitMsg)
-                .setPositiveButton("Yes", (dialog, which) -> finish())
-                .setNegativeButton("No", null)
+                .setPositiveButton(R.string.yes, (dialog, which) -> finish())
+                .setNegativeButton(R.string.no, null)
                 .show();
     }
 }

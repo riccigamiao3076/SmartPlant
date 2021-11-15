@@ -69,4 +69,16 @@
     <string name="signInSuccess">Signed in successful</string>
     <string name="signInError">\"Sign in error: \"</string>
     <string name="googleSignIn">Signing in to Google...</string>
+    <string name="permGrant">Permission Granted</string>
+    <string name="permDeny">Permission Denied</string>
+    <string name="smartPlantOpenCam">Allow Smart Plant to open Camera?</string>
+    <string name="allow">Allow</string>
+    <string name="deny">Deny</string>
+    <string name="accountRateFeedback">Please go to Account and click the Rate App button to send us a feedback. Thank you!</string>
+    <string name="feedbackImportant">Hi, your feedback is important to us!</string>
+    <string name="settingSelected">Settings Selected</string>
+    <string name="databaseFailed">\"The database failed: \"</string>
+    <string name="ok">OK</string>
+    <string name="feedbackSelected">Feedback Selected</string>
+    <string name="plantName">Plant Name</string>
 </resources>
