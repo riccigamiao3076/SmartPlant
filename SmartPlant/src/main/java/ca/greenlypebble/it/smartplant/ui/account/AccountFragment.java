@@ -2,15 +2,13 @@
 //Patrick Gomulka (N01347564)
 //Erni Banaag (N01221990)
 //Ricci Gamiao (N01363076)
-package ca.greenlypebble.it.smartplant.ui.notifications;
+package ca.greenlypebble.it.smartplant.ui.account;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,34 +26,24 @@ import ca.greenlypebble.it.smartplant.LogInActivity;
 import ca.greenlypebble.it.smartplant.R;
 import ca.greenlypebble.it.smartplant.RatePopActivity;
 
-public class NotificationsFragment extends Fragment {
+public class AccountFragment extends Fragment {
 
-
-    Button  myProf,
-            idNumber,
-            prefer,
-            contactUs,
-            about,
-            rateApp,
-            signOut,
-            portraitLock;
-
-
+    Button  myProf, about, prefer, idNumber, rateApp, contactUs, portraitLock, signOut;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
         new ViewModelProvider(this).get(Page3.class);
-        View root = inflater.inflate(R.layout.fragment_page3, container, false);
+        View root = inflater.inflate(R.layout.fragment_account, container, false);
 
         myProf = (Button) root.findViewById(R.id.mpBtn);
-        idNumber = (Button) root.findViewById(R.id.idBtn);
-        prefer = (Button) root.findViewById(R.id.prefBtn);
-        contactUs = (Button) root.findViewById(R.id.cntBtn);
         about = (Button) root.findViewById(R.id.abtBtn);
+        prefer = (Button) root.findViewById(R.id.prefBtn);
+        idNumber = (Button) root.findViewById(R.id.idBtn);
         rateApp = (Button) root.findViewById(R.id.rateBtn);
-        signOut = (Button) root.findViewById(R.id.sOBtn);
+        contactUs = (Button) root.findViewById(R.id.cntBtn);
         portraitLock = (Button) root.findViewById(R.id.portraitButton);
+        signOut = (Button) root.findViewById(R.id.sOBtn);
 
         idNumber.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,16 +83,15 @@ public class NotificationsFragment extends Fragment {
                         Intent intentCall=new Intent(Intent.ACTION_DIAL);
                         intentCall.setData(Uri.parse("tel:6475718154"));
                         startActivity(intentCall);
-
                     }
                 });
 
                 alertDialogBuilder.setNegativeButton(Html.fromHtml("<font color='#0000FF'>Email</font>"), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent intentMail = new Intent(Intent.ACTION_SENDTO);
-                        intentMail.setData(Uri.parse("mailto:"));
-                        intentMail.putExtra(Intent.EXTRA_EMAIL, new String[]{"smartplant@gmail.com"});
+                        Intent intentMail = new Intent(Intent.ACTION_VIEW);
+                        Uri data = Uri.parse("mailto:smartplant@gmail.com");
+                        intentMail.setData(data);
                         startActivity(intentMail);                  }
                 });
 
@@ -119,7 +106,6 @@ public class NotificationsFragment extends Fragment {
         });
 
         portraitLock.setOnClickListener(v -> getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT));
-
 
         signOut.setOnClickListener(v -> {
 

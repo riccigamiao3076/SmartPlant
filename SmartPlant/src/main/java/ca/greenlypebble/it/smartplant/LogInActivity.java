@@ -41,11 +41,11 @@ public class LogInActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loginpage);
 
-        mPrefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
-
+        mPrefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);=
         signIn = (Button) findViewById(R.id.signInbutton);
         signUp = (TextView) findViewById(R.id.tViewSignUp);
         emailAdd = (EditText) findViewById(R.id.editTextTextEmailAddress);
@@ -122,15 +122,4 @@ public class LogInActivity extends Activity {
 
         }
 
-    private void errorM() {
-
-        new androidx.appcompat.app.AlertDialog.Builder(this)
-            .setTitle("Sign In Failed!")
-            .setMessage("Invalid Username or Password.\nEnter ''admin'' for both fields to login.")
-            .setIcon(R.drawable.ic_baseline_error_24)
-
-            .setCancelable(true)
-            .setPositiveButton("Try Again", null)
-            .show();
-    }
 }

@@ -2,15 +2,11 @@
 //Patrick Gomulka (N01347564)
 //Erni Banaag (N01221990)
 //Ricci Gamiao (N01363076)
-package ca.greenlypebble.it.smartplant.ui.notifications;
-
-import android.widget.Button;
+package ca.greenlypebble.it.smartplant.ui.account;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
-
-import ca.greenlypebble.it.smartplant.R;
 
 public class Page3 extends ViewModel {
 

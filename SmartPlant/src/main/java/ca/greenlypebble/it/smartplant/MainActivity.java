@@ -2,6 +2,7 @@
 // Patrick Gomulka (N01347564)
 // Erni Banaag (N01221990)
 // Ricci Gamiao (N01363076)
+
 package ca.greenlypebble.it.smartplant;
 
 import android.Manifest;
@@ -36,13 +37,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
-import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-
-import ca.greenlypebble.it.smartplant.ui.notifications.Page3;
 
 public class MainActivity extends AppCompatActivity {
 //The two design patterns used are Structural and Behavioral design patterns.
@@ -56,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView plantName;
     private TextView status;
     private EditText updateName;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,13 +76,6 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
-
-
-
-
-
-
-
         //Notifications
         lightBtn = findViewById(R.id.lightButton);
 
@@ -100,14 +90,8 @@ public class MainActivity extends AppCompatActivity {
 
                 NotificationManagerCompat managerCompat = NotificationManagerCompat.from(MainActivity.this);
                 managerCompat.notify(1,builder.build());
-
-
             }
         });
-
-
-
-
 
         //Firebase Database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -124,8 +108,6 @@ public class MainActivity extends AppCompatActivity {
         soilMoisture.setValue("Soil Moisture: 50%");
         lightLevels.setValue("Light levels: 500 Lumens");
         motionSensor.setValue("Motion sensor: Active");
-
-
 
         //Update Plant Name Database:
         readName = findViewById(R.id.readNameBtn);
@@ -158,7 +140,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         updateBtn.setOnClickListener(new View.OnClickListener()
 
             {
@@ -169,11 +150,6 @@ public class MainActivity extends AppCompatActivity {
             }
             });
         }
-
-
-
-
-
 
 
 
@@ -196,6 +172,7 @@ public class MainActivity extends AppCompatActivity {
             break;
             case R.id.feedbackMenu:
                 Toast.makeText(this, "Feedback Selected", Toast.LENGTH_SHORT).show();
+                feedbackDialog();
             break;
             case R.id.statusMenu:
                 databaseReference = FirebaseDatabase.getInstance().getReference().child("Status");
@@ -224,7 +201,7 @@ public class MainActivity extends AppCompatActivity {
 
             break;
             case R.id.settingMenu:
-                setContentView(R.layout.fragment_page3);
+                setContentView(R.layout.fragment_account);
                 Toast.makeText(this, "Settings Selected", Toast.LENGTH_SHORT).show();
             default:
                 return super.onOptionsItemSelected(item);
@@ -232,6 +209,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return false;
+    }
+
+    private void feedbackDialog() {
+        new AlertDialog.Builder(this)
+                .setTitle("Hi, your feedback is important to us!")
+                .setMessage("Please go to Account and click the Rate App button to send us a feedback. Thank you!")
+                .setPositiveButton("Ok", (dialog, which) -> dialog.cancel())
+                .show();
     }
 
     private void requestStoragePermission() {
