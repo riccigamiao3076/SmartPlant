@@ -189,6 +189,7 @@ public class MainActivity extends AppCompatActivity {
             break;
             case R.id.feedbackMenu:
                 Toast.makeText(this, "Feedback Selected", Toast.LENGTH_SHORT).show();
+                feedbackDialog();
             break;
             case R.id.statusMenu:
                 databaseReference = FirebaseDatabase.getInstance().getReference().child("Status");
@@ -225,6 +226,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return false;
+    }
+
+    private void feedbackDialog() {
+        new AlertDialog.Builder(this)
+                .setTitle("Hi, your feedback is important to us!")
+                .setMessage("Please go to Account and click the Rate App button to send us a feedback. Thank you!")
+                .setPositiveButton("Ok", (dialog, which) -> dialog.cancel())
+                .show();
     }
 
     private void requestStoragePermission() {

@@ -122,15 +122,4 @@ public class LogInActivity extends Activity {
 
         }
 
-    private void errorM() {
-
-        new androidx.appcompat.app.AlertDialog.Builder(this)
-            .setTitle("Sign In Failed!")
-            .setMessage("Invalid Username or Password.\nEnter ''admin'' for both fields to login.")
-            .setIcon(R.drawable.ic_baseline_error_24)
-
-            .setCancelable(true)
-            .setPositiveButton("Try Again", null)
-            .show();
-    }
 }
