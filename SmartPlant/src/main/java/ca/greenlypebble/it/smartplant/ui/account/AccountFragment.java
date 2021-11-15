@@ -28,14 +28,7 @@ import ca.greenlypebble.it.smartplant.RatePopActivity;
 
 public class AccountFragment extends Fragment {
 
-    Button  myProf,
-            idNumber,
-            prefer,
-            contactUs,
-            about,
-            rateApp,
-            signOut,
-            portraitLock;
+    Button  myProf, about, prefer, idNumber, rateApp, contactUs, portraitLock, signOut;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -44,13 +37,13 @@ public class AccountFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_account, container, false);
 
         myProf = (Button) root.findViewById(R.id.mpBtn);
-        idNumber = (Button) root.findViewById(R.id.idBtn);
-        prefer = (Button) root.findViewById(R.id.prefBtn);
-        contactUs = (Button) root.findViewById(R.id.cntBtn);
         about = (Button) root.findViewById(R.id.abtBtn);
+        prefer = (Button) root.findViewById(R.id.prefBtn);
+        idNumber = (Button) root.findViewById(R.id.idBtn);
         rateApp = (Button) root.findViewById(R.id.rateBtn);
-        signOut = (Button) root.findViewById(R.id.sOBtn);
+        contactUs = (Button) root.findViewById(R.id.cntBtn);
         portraitLock = (Button) root.findViewById(R.id.portraitButton);
+        signOut = (Button) root.findViewById(R.id.sOBtn);
 
         idNumber.setOnClickListener(new View.OnClickListener() {
             @Override
