@@ -65,4 +65,6 @@
     <string name="enterPassword">Please enter your Password</string>
     <string name="registerSuccess">Registration successful</string>
     <string name="registerError">\"Registration Error: \"</string>
+    <string name="signInSuccess">Signed in successful</string>
+    <string name="signInError">\"Sign in error: \"</string>
 </resources>
