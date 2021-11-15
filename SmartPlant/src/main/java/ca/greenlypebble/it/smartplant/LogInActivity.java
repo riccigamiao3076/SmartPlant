@@ -74,7 +74,7 @@ public class LogInActivity extends Activity {
             String password = passWord.getText().toString();
 
             if (TextUtils.isEmpty(email)) {
-                emailAdd.setError("Please enter your email");
+                emailAdd.setError("@string/your_email");
                 emailAdd.requestFocus();
 
             } else if (TextUtils.isEmpty(password)) {
