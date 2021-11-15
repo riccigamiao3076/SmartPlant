@@ -38,13 +38,22 @@ public class AccountFragment extends Fragment {
 
         myProf = (Button) root.findViewById(R.id.mpBtn);
         about = (Button) root.findViewById(R.id.abtBtn);
-        prefer = (Button) root.findViewById(R.id.prefBtn);
         idNumber = (Button) root.findViewById(R.id.idBtn);
         rateApp = (Button) root.findViewById(R.id.rateBtn);
         contactUs = (Button) root.findViewById(R.id.cntBtn);
         portraitLock = (Button) root.findViewById(R.id.portraitButton);
         signOut = (Button) root.findViewById(R.id.sOBtn);
 
+        about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
+                 alertDialogBuilder.setTitle("About SmartPlant App")
+                        .setMessage("SmartPlant App provides better management of your plant. We help you maintain and supervise your plants by just few looks and taps.");
+
+                alertDialogBuilder.show();
+            }
+        });
         myProf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
