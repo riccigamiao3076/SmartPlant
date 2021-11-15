@@ -56,5 +56,10 @@
     <string name="plant_name">Plant Name:</string>
     <string name="read_name">Read Name</string>
     <string name="statusText" />
+    <string name="contactUS">Contact Us</string>
+    <string name="callOrEmail">You can call or email us now.</string>
+    <string name="sureSignOut">Are you sure you want to sign out?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 
 </resources>
