@@ -52,9 +52,11 @@ public class RegisterActivity extends Activity {
         if (TextUtils.isEmpty(email)){
             emailReg.setError(getString(R.string.enterEmail));
             emailReg.requestFocus();
+
         }else if (TextUtils.isEmpty(password)){
             passReg.setError(getString(R.string.enterPassword));
             passReg.requestFocus();
+
         }else{
             mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
