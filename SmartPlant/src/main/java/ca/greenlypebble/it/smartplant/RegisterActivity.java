@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class RegisterActivity extends Activity {
 
-    EditText emailReg, passReg;
+    EditText emailReg, pass1Reg, nameReg, pass2Reg, numReg;
     TextView tvLoginHere;
     Button bRegister;
 
@@ -30,46 +30,55 @@ public class RegisterActivity extends Activity {
         setContentView(R.layout.activity_register);
 
         emailReg = findViewById(R.id.eTextEmailReg);
-        passReg = findViewById(R.id.eTextPassReg);
+        pass1Reg = findViewById(R.id.eTextPassReg);
+        nameReg = findViewById(R.id.eTextFullName);
+        pass2Reg = findViewById(R.id.eTextConfirmPass);
+        numReg = findViewById(R.id.eTextPhoneNum);
+
         tvLoginHere = findViewById(R.id.tvLoginHere);
         bRegister = findViewById(R.id.bRegister);
 
         mAuth = FirebaseAuth.getInstance();
 
-        bRegister.setOnClickListener(view ->{
+        bRegister.setOnClickListener(view -> {
             registerProcess();
         });
 
-        tvLoginHere.setOnClickListener(view ->{
+        tvLoginHere.setOnClickListener(view -> {
             startActivity(new Intent(RegisterActivity.this, LogInActivity.class));
         });
     }
 
-    private void registerProcess(){
+    private void registerProcess() {
         String email = emailReg.getText().toString();
-        String password = passReg.getText().toString();
+        String password = pass1Reg.getText().toString();
 
-        if (TextUtils.isEmpty(email)){
+        if (TextUtils.isEmpty(email)) {
             emailReg.setError(getString(R.string.enterEmail));
             emailReg.requestFocus();
 
-        }else if (TextUtils.isEmpty(password)){
-            passReg.setError(getString(R.string.enterPassword));
-            passReg.requestFocus();
+            if (TextUtils.isEmpty(email)) {
+                emailReg.setError(getString(R.string.enterEmail));
+                emailReg.requestFocus();
 
-        }else{
-            mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if (task.isSuccessful()){
-                        Toast.makeText(RegisterActivity.this, R.string.registerSuccess, Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(RegisterActivity.this, LogInActivity.class));
-                    }else{
-                        Toast.makeText(RegisterActivity.this, getString(R.string.registerError) + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+            } else if (TextUtils.isEmpty(password)) {
+                pass1Reg.setError(getString(R.string.enterPassword));
+                pass1Reg.requestFocus();
+
+            } else {
+                mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(RegisterActivity.this, R.string.registerSuccess, Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(RegisterActivity.this, LogInActivity.class));
+                        } else {
+                            Toast.makeText(RegisterActivity.this, getString(R.string.registerError) + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        }
                     }
-                }
-            });
+                });
+            }
         }
     }
-
 }
+
