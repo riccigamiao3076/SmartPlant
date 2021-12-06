@@ -55,28 +55,23 @@ public class RegisterActivity extends Activity {
         String password1 = pass1Reg.getText().toString();
         String fName = nameReg.getText().toString();
         String password2 = pass2Reg.getText().toString();
-        String num = numReg.getText().toString();
+        String num = "+"+numReg.getText().toString();
 
         String PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&=])(?=\\S+$).{4,}$";
 
-        if (TextUtils.isEmpty(fName)) {
-            nameReg.setError("Please enter valid name");
+        if (TextUtils.isEmpty(fName) || fName.length() < 6) {
+            nameReg.setError("Please enter your full name and at least 6 characters");
             nameReg.requestFocus();
         } else if (TextUtils.isEmpty(email)) {
             emailReg.setError(getString(R.string.enterEmail));
             emailReg.requestFocus();
-        } else if (TextUtils.isEmpty(password1)) {
-            pass1Reg.setError(getString(R.string.enterPassword));
-            pass1Reg.requestFocus();
-        } else if (password1.length() < 8 ) {
+        } else if (TextUtils.isEmpty(password1) || password1.length() < 8 ) {
             pass1Reg.setError("Password must be at least 8 characters");
             pass1Reg.requestFocus();
-        }
-
-        else if (TextUtils.isEmpty(password2)) {
+        }  else if (TextUtils.isEmpty(password2)) {
             pass2Reg.setError("Please confirm your password");
             pass2Reg.requestFocus();
-        } else if (TextUtils.isEmpty(num)) {
+        } else if (TextUtils.isEmpty(num) || num.length() < 10) {
             numReg.setError("Please enter valid number");
             numReg.requestFocus();
         } else if (!password1.matches(PASSWORD_PATTERN)) {
@@ -96,7 +91,7 @@ public class RegisterActivity extends Activity {
                             Toast.makeText(RegisterActivity.this, R.string.registerSuccess, Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(RegisterActivity.this, LogInActivity.class));
                         } else {
-                            Toast.makeText(RegisterActivity.this, getString(R.string.registerError) + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RegisterActivity.this, "Registration Unsuccessful: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
