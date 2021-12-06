@@ -60,7 +60,7 @@
         android:layout_margin="10dp"
         android:hint="Contact Number"
         android:importantForAutofill="no"
-        android:inputType="textPersonName"
+        android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.149"
@@ -69,13 +69,30 @@
         app:layout_constraintVertical_bias="0.289" />
 
     <EditText
+        android:id="@+id/subRev"
+        android:layout_width="237dp"
+        android:layout_height="44dp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:hint="Subject/Title"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.149"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.359" />
+
+    <EditText
         android:id="@+id/feedbackRev"
-        android:layout_width="322dp"
-        android:layout_height="259dp"
+        android:layout_width="328dp"
+        android:layout_height="191dp"
         android:ems="10"
         android:gravity="start|top"
         android:hint="Feedback/Comments"
         android:inputType="textMultiLine"
+        android:maxLength="248"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"

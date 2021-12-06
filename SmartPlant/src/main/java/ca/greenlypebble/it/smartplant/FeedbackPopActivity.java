@@ -28,7 +28,7 @@ public class FeedbackPopActivity extends Activity {
 
     Button sendDatabtn;
 
-    EditText userName, userPhone, userEAdd;
+    EditText userName, userPhone, userEAdd, subjectT;
     EditText feedback;
 
     FirebaseDatabase firebaseDatabase;
@@ -59,6 +59,7 @@ public class FeedbackPopActivity extends Activity {
         userName = findViewById(R.id.nameRev);
         userPhone = findViewById(R.id.numRev);
         userEAdd = findViewById(R.id.emailRev);
+        subjectT = findViewById(R.id.subRev);
         feedback = findViewById(R.id.feedbackRev);
 
         firebaseDatabase = FirebaseDatabase.getInstance();
@@ -79,17 +80,20 @@ public class FeedbackPopActivity extends Activity {
             String userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (TextUtils.isEmpty(userName.getText()) || userName.getText().toString().length() < 4) {
-                    Toast.makeText(FeedbackPopActivity.this, "Please enter your name", Toast.LENGTH_SHORT).show();
+                if (TextUtils.isEmpty(userName.getText()) || userName.getText().toString().length() < 3) {
+                    Toast.makeText(FeedbackPopActivity.this, "Please enter valid name", Toast.LENGTH_SHORT).show();
+                }
+                else if (TextUtils.isEmpty(subjectT.getText()) || subjectT.getText().toString().length() < 5) {
+                    Toast.makeText(FeedbackPopActivity.this, "Please enter subject or title", Toast.LENGTH_SHORT).show();
                 }
                 else if (TextUtils.isEmpty(feedback.getText()) || feedback.getText().toString().length() < 10) {
                     Toast.makeText(FeedbackPopActivity.this, "Please enter meaningful feedback", Toast.LENGTH_SHORT).show();
                 } else {
 
-                    databaseReference.child("User Feedbacks").child(userID.toString()).child("Phone").setValue(userPhone.getText().toString());
-                    databaseReference.child("User Feedbacks").child(userID.toString()).child("Name").setValue(userName.getText().toString());
-                    databaseReference.child("User Feedbacks").child(userID.toString()).child("Email").setValue(userEAdd.getText().toString());
-                    databaseReference.child("User Feedbacks").child(userID.toString()).child("Feedback").setValue(feedback.getText().toString());
+                    databaseReference.child("User Feedbacks").child(userID.toString()).child(subjectT.getText().toString()).child("Phone").setValue(userPhone.getText().toString());
+                    databaseReference.child("User Feedbacks").child(userID.toString()).child(subjectT.getText().toString()).child("Name").setValue(userName.getText().toString());
+                    databaseReference.child("User Feedbacks").child(userID.toString()).child(subjectT.getText().toString()).child("Email").setValue(userEAdd.getText().toString());
+                    databaseReference.child("User Feedbacks").child(userID.toString()).child(subjectT.getText().toString()).child("Feedback").setValue(feedback.getText().toString());
 
                     finish();
                 }
