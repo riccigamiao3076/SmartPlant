@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -98,10 +99,12 @@ public class RatePopActivity extends Activity {
                 }
             });
 
+            String userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
 //            databaseReference.child("User Reviews").child(userName.getText().toString()).child("Phone").setValue(userPhone.getText().toString());
 //            databaseReference.child("User Reviews").child(userName.getText().toString()).child("Name").setValue(userName.getText().toString());
 //            databaseReference.child("User Reviews").child(userName.getText().toString()).child("Email").setValue(userEAdd.getText().toString());
-            databaseReference.child("Ratings").child("Rate").setValue(ratingInfotv.getText().toString());
+            databaseReference.child("Ratings").child(userID.toString()).child("Rate").setValue(ratingInfotv.getText().toString());
 //            databaseReference.child("User Reviews").child(userName.getText().toString()).child("Feedback").setValue(feedback.getText().toString());
 
 
