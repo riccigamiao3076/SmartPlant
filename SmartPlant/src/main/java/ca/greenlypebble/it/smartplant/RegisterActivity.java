@@ -55,7 +55,7 @@ public class RegisterActivity extends Activity {
         String password1 = pass1Reg.getText().toString();
         String fName = nameReg.getText().toString();
         String password2 = pass2Reg.getText().toString();
-        String num = "+"+numReg.getText().toString();
+        String num = numReg.getText().toString();
 
         String PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&=])(?=\\S+$).{4,}$";
 

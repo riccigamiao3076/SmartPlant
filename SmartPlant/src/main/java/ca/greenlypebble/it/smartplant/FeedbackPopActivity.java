@@ -78,6 +78,8 @@ public class FeedbackPopActivity extends Activity {
         databaseReference = firebaseDatabase.getReference();
         databaseReference.addValueEventListener(new ValueEventListener() {
             String userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+            String userEmail = FirebaseAuth.getInstance().getCurrentUser().getEmail();
+
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (TextUtils.isEmpty(userName.getText()) || userName.getText().toString().length() < 3) {
