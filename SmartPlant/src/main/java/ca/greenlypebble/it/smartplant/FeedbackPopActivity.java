@@ -2,6 +2,7 @@ package ca.greenlypebble.it.smartplant;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.View;
@@ -16,6 +17,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -67,7 +69,6 @@ public class FeedbackPopActivity extends Activity {
             @Override
             public void onClick(View v) {
                 submitReview();
-                finish();
             }
         });
     }
@@ -75,8 +76,23 @@ public class FeedbackPopActivity extends Activity {
     private void submitReview() {
         databaseReference = firebaseDatabase.getReference();
         databaseReference.addValueEventListener(new ValueEventListener() {
+            String userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (TextUtils.isEmpty(userName.getText()) || userName.getText().toString().length() < 4) {
+                    Toast.makeText(FeedbackPopActivity.this, "Please enter your name", Toast.LENGTH_SHORT).show();
+                }
+                else if (TextUtils.isEmpty(feedback.getText()) || feedback.getText().toString().length() < 10) {
+                    Toast.makeText(FeedbackPopActivity.this, "Please enter meaningful feedback", Toast.LENGTH_SHORT).show();
+                } else {
+
+                    databaseReference.child("User Feedbacks").child(userID.toString()).child("Phone").setValue(userPhone.getText().toString());
+                    databaseReference.child("User Feedbacks").child(userID.toString()).child("Name").setValue(userName.getText().toString());
+                    databaseReference.child("User Feedbacks").child(userID.toString()).child("Email").setValue(userEAdd.getText().toString());
+                    databaseReference.child("User Feedbacks").child(userID.toString()).child("Feedback").setValue(feedback.getText().toString());
+
+                    finish();
+                }
 
             }
 
@@ -85,11 +101,6 @@ public class FeedbackPopActivity extends Activity {
 
             }
         });
-
-        databaseReference.child("User Feedbacks").child(userName.getText().toString()).child("Phone").setValue(userPhone.getText().toString());
-        databaseReference.child("User Feedbacks").child(userName.getText().toString()).child("Name").setValue(userName.getText().toString());
-        databaseReference.child("User Feedbacks").child(userName.getText().toString()).child("Email").setValue(userEAdd.getText().toString());
-        databaseReference.child("User Feedbacks").child(userName.getText().toString()).child("Feedback").setValue(feedback.getText().toString());
 
     }
 }
