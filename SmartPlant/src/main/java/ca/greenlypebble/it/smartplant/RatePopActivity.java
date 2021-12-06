@@ -27,9 +27,9 @@ public class RatePopActivity extends Activity {
     RatingBar rateBar;
     Button sendDatabtn;
 
-    EditText userName, userPhone, userEAdd;
+//    EditText userName, userPhone, userEAdd;
     TextView ratingInfotv;
-    EditText feedback;
+//    EditText feedback;
 
 
     FirebaseDatabase firebaseDatabase;
@@ -46,7 +46,7 @@ public class RatePopActivity extends Activity {
         int width = dm.widthPixels;
         int height = dm.heightPixels;
 
-        getWindow().setLayout((int) (width * .9), (int) (height * .8));
+        getWindow().setLayout((int) (width * .6), (int) (height * .4));
 
         WindowManager.LayoutParams par = getWindow().getAttributes();
         par.gravity = Gravity.CENTER;
@@ -58,11 +58,11 @@ public class RatePopActivity extends Activity {
         rateBar = findViewById(R.id.ratingBar);
         sendDatabtn = findViewById(R.id.popRateButton);
 
-        userName = findViewById(R.id.nameRev);
-        userPhone = findViewById(R.id.numRev);
-        userEAdd = findViewById(R.id.emailRev);
-        feedback = findViewById(R.id.feedbackRev);
-
+//        userName = findViewById(R.id.nameRev);
+//        userPhone = findViewById(R.id.numRev);
+//        userEAdd = findViewById(R.id.emailRev);
+//        feedback = findViewById(R.id.feedbackRev);
+//
         ratingInfotv = findViewById(R.id.tvRate);
         firebaseDatabase = FirebaseDatabase.getInstance();
 
@@ -98,11 +98,11 @@ public class RatePopActivity extends Activity {
                 }
             });
 
-            databaseReference.child("User Reviews").child(userName.getText().toString()).child("Phone").setValue(userPhone.getText().toString());
-            databaseReference.child("User Reviews").child(userName.getText().toString()).child("Name").setValue(userName.getText().toString());
-            databaseReference.child("User Reviews").child(userName.getText().toString()).child("Email").setValue(userEAdd.getText().toString());
-            databaseReference.child("User Reviews").child(userName.getText().toString()).child("Rating").setValue(ratingInfotv.getText().toString());
-            databaseReference.child("User Reviews").child(userName.getText().toString()).child("Feedback").setValue(feedback.getText().toString());
+//            databaseReference.child("User Reviews").child(userName.getText().toString()).child("Phone").setValue(userPhone.getText().toString());
+//            databaseReference.child("User Reviews").child(userName.getText().toString()).child("Name").setValue(userName.getText().toString());
+//            databaseReference.child("User Reviews").child(userName.getText().toString()).child("Email").setValue(userEAdd.getText().toString());
+            databaseReference.child("Ratings").child("Rate").setValue(ratingInfotv.getText().toString());
+//            databaseReference.child("User Reviews").child(userName.getText().toString()).child("Feedback").setValue(feedback.getText().toString());
 
 
     }
