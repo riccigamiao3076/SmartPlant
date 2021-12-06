@@ -51,34 +51,44 @@ public class RegisterActivity extends Activity {
 
     private void registerProcess() {
         String email = emailReg.getText().toString();
-        String password = pass1Reg.getText().toString();
+        String password1 = pass1Reg.getText().toString();
+        String fName = nameReg.getText().toString();
+        String password2 = pass2Reg.getText().toString();
+        String num = numReg.getText().toString();
 
-        if (TextUtils.isEmpty(email)) {
+        if (TextUtils.isEmpty(fName)) {
+            nameReg.setError("Please enter valid name");
+            nameReg.requestFocus();
+        } else if (TextUtils.isEmpty(email)) {
             emailReg.setError(getString(R.string.enterEmail));
             emailReg.requestFocus();
-
-            if (TextUtils.isEmpty(email)) {
-                emailReg.setError(getString(R.string.enterEmail));
-                emailReg.requestFocus();
-
-            } else if (TextUtils.isEmpty(password)) {
-                pass1Reg.setError(getString(R.string.enterPassword));
-                pass1Reg.requestFocus();
-
-            } else {
-                mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(RegisterActivity.this, R.string.registerSuccess, Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(RegisterActivity.this, LogInActivity.class));
-                        } else {
-                            Toast.makeText(RegisterActivity.this, getString(R.string.registerError) + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
-            }
+        } else if (TextUtils.isEmpty(password1)) {
+            pass1Reg.setError(getString(R.string.enterPassword));
+            pass1Reg.requestFocus();
+        } else if (TextUtils.isEmpty(password2)) {
+            pass2Reg.setError("Please confirm your password");
+            pass2Reg.requestFocus();
+        } else if (password2 != password1) {
+            pass2Reg.setError("Password do not match!");
+            pass2Reg.requestFocus();
+        } else if (TextUtils.isEmpty(num)) {
+            numReg.setError("Please enter your number");
+            numReg.requestFocus();
         }
+
+//            } else {
+//                mAuth.createUserWithEmailAndPassword(email, password1).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<AuthResult> task) {
+//                        if (task.isSuccessful()) {
+//                            Toast.makeText(RegisterActivity.this, R.string.registerSuccess, Toast.LENGTH_SHORT).show();
+//                            startActivity(new Intent(RegisterActivity.this, LogInActivity.class));
+//                        } else {
+//                            Toast.makeText(RegisterActivity.this, getString(R.string.registerError) + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+//                        }
+//                    }
+//                });
+//            }
     }
 }
 
