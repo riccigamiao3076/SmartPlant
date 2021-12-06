@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Patterns;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -56,6 +57,8 @@ public class RegisterActivity extends Activity {
         String password2 = pass2Reg.getText().toString();
         String num = numReg.getText().toString();
 
+        String PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&=])(?=\\S+$).{4,}$";
+
         if (TextUtils.isEmpty(fName)) {
             nameReg.setError("Please enter valid name");
             nameReg.requestFocus();
@@ -65,30 +68,39 @@ public class RegisterActivity extends Activity {
         } else if (TextUtils.isEmpty(password1)) {
             pass1Reg.setError(getString(R.string.enterPassword));
             pass1Reg.requestFocus();
-        } else if (TextUtils.isEmpty(password2)) {
-            pass2Reg.setError("Please confirm your password");
-            pass2Reg.requestFocus();
-        } else if (password2 != password1) {
-            pass2Reg.setError("Password do not match!");
-            pass2Reg.requestFocus();
-        } else if (TextUtils.isEmpty(num)) {
-            numReg.setError("Please enter your number");
-            numReg.requestFocus();
+        } else if (password1.length() < 8 ) {
+            pass1Reg.setError("Password must be at least 8 characters");
+            pass1Reg.requestFocus();
         }
 
-//            } else {
-//                mAuth.createUserWithEmailAndPassword(email, password1).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<AuthResult> task) {
-//                        if (task.isSuccessful()) {
-//                            Toast.makeText(RegisterActivity.this, R.string.registerSuccess, Toast.LENGTH_SHORT).show();
-//                            startActivity(new Intent(RegisterActivity.this, LogInActivity.class));
-//                        } else {
-//                            Toast.makeText(RegisterActivity.this, getString(R.string.registerError) + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-//                        }
-//                    }
-//                });
-//            }
+        else if (TextUtils.isEmpty(password2)) {
+            pass2Reg.setError("Please confirm your password");
+            pass2Reg.requestFocus();
+        } else if (TextUtils.isEmpty(num)) {
+            numReg.setError("Please enter valid number");
+            numReg.requestFocus();
+        } else if (!password1.matches(PASSWORD_PATTERN)) {
+            pass1Reg.setError("Password must contain at least one uppercase, one lowercase and a special character.\n" +
+                    "Except + and ~");
+            pass1Reg.requestFocus();
+        } else if (!password2.matches(password1)) {
+            pass2Reg.setError("Password do not match!");
+            pass2Reg.requestFocus();
+        }
+
+        else {
+                mAuth.createUserWithEmailAndPassword(email, password1).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(RegisterActivity.this, R.string.registerSuccess, Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(RegisterActivity.this, LogInActivity.class));
+                        } else {
+                            Toast.makeText(RegisterActivity.this, getString(R.string.registerError) + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+            }
     }
 }
 
