@@ -8,7 +8,7 @@
     tools:context=".FeedbackPopActivity">
 
     <Button
-        android:id="@+id/popRateButton"
+        android:id="@+id/fBackButton"
         android:layout_width="95dp"
         android:layout_height="47dp"
         android:text="Submit"
@@ -70,27 +70,27 @@
 
     <EditText
         android:id="@+id/feedbackRev"
-        android:layout_width="323dp"
-        android:layout_height="364dp"
+        android:layout_width="322dp"
+        android:layout_height="259dp"
         android:ems="10"
         android:gravity="start|top"
         android:hint="Feedback/Comments"
         android:inputType="textMultiLine"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.375"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.73" />
+        app:layout_constraintVertical_bias="0.716" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="259dp"
         android:layout_height="65dp"
         android:fontFamily="@font/chela_one"
-        android:text="FEEDBACK"
+        android:text="Your feedback is important to us!"
         android:textAlignment="center"
-        android:textSize="48sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

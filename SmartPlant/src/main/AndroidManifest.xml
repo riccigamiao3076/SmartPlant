@@ -19,7 +19,13 @@
             android:name=".RatePopActivity"
             android:exported="false"
             android:label="Rate App"
-            android:theme="@style/PopRate" />
+            android:theme="@style/PopUp" />
+        <activity
+            android:name=".FeedbackPopActivity"
+            android:exported="false"
+            android:label="Feedback "
+            android:theme="@style/PopUp" />
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name">

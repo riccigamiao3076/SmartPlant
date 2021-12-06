@@ -167,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
             break;
             case R.id.feedbackMenu:
 //                Toast.makeText(this, R.string.feedbackSelected, Toast.LENGTH_SHORT).show();
-//                startActivity(new Intent(MainActivity.this, FeedbackPopActivity.class));
+                startActivity(new Intent(MainActivity.this, FeedbackPopActivity.class));
 //                feedbackDialog();
             break;
             case R.id.statusMenu:
