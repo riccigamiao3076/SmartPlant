@@ -17,6 +17,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class RegisterActivity extends Activity {
 
     EditText emailReg, pass1Reg, nameReg, pass2Reg, numReg;
@@ -51,51 +54,76 @@ public class RegisterActivity extends Activity {
     }
 
     private void registerProcess() {
+        String fName = nameReg.getText().toString();
         String email = emailReg.getText().toString();
         String password1 = pass1Reg.getText().toString();
-        String fName = nameReg.getText().toString();
         String password2 = pass2Reg.getText().toString();
         String num = numReg.getText().toString();
 
-        String PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&=])(?=\\S+$).{4,}$";
+        boolean isValidName = RegisterActivity.checkfNameForValidity(fName);
+        boolean isValidEmail = RegisterActivity.checkEmailForValidity(email);
+        boolean isValidpWord1 = RegisterActivity.checkpWord1ForValidity(password1);
 
-        if (TextUtils.isEmpty(fName) || fName.length() < 6) {
-            nameReg.setError("Please enter your full name and at least 6 characters");
-            nameReg.requestFocus();
-        } else if (TextUtils.isEmpty(email)) {
-            emailReg.setError(getString(R.string.enterEmail));
-            emailReg.requestFocus();
+        if (fName.isEmpty() || fName.length() < 6) {
+            Toast.makeText(getApplicationContext(), "Name must be at least 6 characters", Toast.LENGTH_LONG).show();
+        } else if (!isValidName) {
+            Toast.makeText(getApplicationContext(), "Please enter valid name", Toast.LENGTH_LONG).show();
+        } else if (!isValidEmail) {
+            Toast.makeText(getApplicationContext(), "Please enter valid email address", Toast.LENGTH_LONG).show();
+        } else if (password2.isEmpty()) {
+            pass2Reg.setError("Please confirm your password");
+            pass2Reg.requestFocus();
+        } else if (!isValidpWord1) {
+            Toast.makeText(getApplicationContext(), "Password must contain at least one uppercase, one lowercase and a special character.\n" +
+                    "Except + and ~", Toast.LENGTH_LONG).show();
         } else if (TextUtils.isEmpty(password1) || password1.length() < 8 ) {
             pass1Reg.setError("Password must be at least 8 characters");
             pass1Reg.requestFocus();
-        }  else if (TextUtils.isEmpty(password2)) {
-            pass2Reg.setError("Please confirm your password");
-            pass2Reg.requestFocus();
-        } else if (TextUtils.isEmpty(num) || num.length() < 10) {
-            numReg.setError("Please enter valid number");
-            numReg.requestFocus();
-        } else if (!password1.matches(PASSWORD_PATTERN)) {
-            pass1Reg.setError("Password must contain at least one uppercase, one lowercase and a special character.\n" +
-                    "Except + and ~");
-            pass1Reg.requestFocus();
         } else if (!password2.matches(password1)) {
-            pass2Reg.setError("Password do not match!");
+            pass2Reg.setError("Passwords do not match!");
             pass2Reg.requestFocus();
-        }
+        } else if(num.isEmpty() || num.length() < 10) {
+            Toast.makeText(getApplicationContext(), "Please enter valid number", Toast.LENGTH_LONG).show();
+        } else {
 
-        else {
-                mAuth.createUserWithEmailAndPassword(email, password1).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(RegisterActivity.this, R.string.registerSuccess, Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(RegisterActivity.this, LogInActivity.class));
-                        } else {
-                            Toast.makeText(RegisterActivity.this, "Registration Unsuccessful: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                        }
+            mAuth.createUserWithEmailAndPassword(email, password1).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(RegisterActivity.this, R.string.registerSuccess, Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(RegisterActivity.this, LogInActivity.class));
+                    } else {
+                        Toast.makeText(RegisterActivity.this, "Registration Unsuccessful: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
-                });
-            }
+                }
+            });
+        }
+    }
+
+    public static boolean checkfNameForValidity(String fName) {
+
+        Pattern fNameRegex =
+                Pattern.compile("^[a-zA-z ]*$", Pattern.CASE_INSENSITIVE);
+        Matcher matcher = fNameRegex.matcher(fName);
+        return matcher.find();
+
+    }
+
+    public static boolean checkEmailForValidity(String email) {
+
+        Pattern eAddRegex =
+                Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
+        email = email.trim();
+        Matcher matcher = eAddRegex.matcher(email);
+        return matcher.find();
+
+    }
+
+    public static boolean checkpWord1ForValidity(String pWord1) {
+        Pattern pWord1Regex =
+                Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&=])(?=\\S+$).{4,}$", Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pWord1Regex.matcher(pWord1);
+        return matcher.find();
     }
 }
 
