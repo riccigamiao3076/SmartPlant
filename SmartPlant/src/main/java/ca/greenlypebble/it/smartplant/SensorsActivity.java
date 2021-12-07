@@ -17,8 +17,8 @@ import com.google.firebase.database.ValueEventListener;
 public class SensorsActivity extends Activity {
 
     Button addSensor, exitSensor, readBtn;
-    DatabaseReference tempDatabase, humidDatabase;
-    TextView tempVal, humidVal;
+    DatabaseReference tempDatabase, humidDatabase, motionDatabase, lightDatabase, waterDatabase;
+    TextView tempVal, humidVal, motionVal, lightVal, waterVal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +28,15 @@ public class SensorsActivity extends Activity {
         readBtn = (Button) findViewById(R.id.readBtn);
         tempVal = (TextView) findViewById(R.id.tempVal);
         humidVal = (TextView) findViewById(R.id.humidVal);
+        motionVal = (TextView) findViewById(R.id.motionVal);
+        lightVal = (TextView) findViewById(R.id.lightVal);
+        waterVal = (TextView) findViewById(R.id.waterVal);
 
-        tempDatabase = FirebaseDatabase.getInstance().getReference().child("Temparature");
+        tempDatabase = FirebaseDatabase.getInstance().getReference().child("Temperature");
         humidDatabase = FirebaseDatabase.getInstance().getReference().child("Humidity");
+        motionDatabase = FirebaseDatabase.getInstance().getReference().child("Motion Sensor");
+        lightDatabase = FirebaseDatabase.getInstance().getReference().child("Light Sensor");
+        waterDatabase = FirebaseDatabase.getInstance().getReference().child("Water level");
 
         exitSensor.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,6 +71,54 @@ public class SensorsActivity extends Activity {
                         {
                             String data=snapshot.getValue().toString();
                             humidVal.setText(data);
+                        }
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+                motionDatabase.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if (snapshot.exists())
+                        {
+                            String data=snapshot.getValue().toString();
+                            motionVal.setText(data);
+                        }
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+                lightDatabase.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if (snapshot.exists())
+                        {
+                            String data=snapshot.getValue().toString();
+                            lightVal.setText(data);
+                        }
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+                waterDatabase.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if (snapshot.exists())
+                        {
+                            String data=snapshot.getValue().toString();
+                            waterVal.setText(data);
                         }
 
                     }
