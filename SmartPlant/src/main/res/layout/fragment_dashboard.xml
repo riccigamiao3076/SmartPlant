@@ -110,15 +110,16 @@
             app:fab_colorDisabled="#FFF"
             app:fab_icon="@drawable/circlecheck"
             app:fab_size="mini"
-            app:fab_title="Icon 1" />
+            app:fab_title="Check Plant" />
 
         <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabfeedbackBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:fab_colorDisabled="#FFF"
             app:fab_icon="@drawable/feedback"
             app:fab_size="mini"
-            app:fab_title="Icon 1" />
+            app:fab_title="Feedback" />
 
 
     </com.getbase.floatingactionbutton.FloatingActionsMenu>

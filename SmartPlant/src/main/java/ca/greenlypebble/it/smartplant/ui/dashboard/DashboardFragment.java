@@ -33,7 +33,7 @@ import ca.greenlypebble.it.smartplant.SensorsActivity;
 public class DashboardFragment extends Fragment {
 
     private Page2 page2;
-    FloatingActionButton fabBtn;
+    FloatingActionButton fabBtn,fadfeedbackBtn;
 
     ImageButton sensorButton, historyButton, healthButton;
 
@@ -47,6 +47,9 @@ public class DashboardFragment extends Fragment {
         historyButton = (ImageButton) root.findViewById(R.id.historyButton);
         healthButton =  (ImageButton) root.findViewById(R.id.healthButton);
         fabBtn = (FloatingActionButton) root.findViewById(R.id.fabBtn);
+        fadfeedbackBtn = (FloatingActionButton) root.findViewById(R.id.fabfeedbackBtn);
+
+
 
         //FAB Button
         fabBtn.setOnClickListener(new View.OnClickListener() {
@@ -56,6 +59,16 @@ public class DashboardFragment extends Fragment {
                         .setAction("Action", null).show();
             }
         });
+
+        //FAB FeedBack Button
+        fadfeedbackBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent feedbackPop = new Intent(getContext(), FeedbackPopActivity.class);
+                startActivity(feedbackPop);
+            }
+        });
+
 
         sensorButton.setOnClickListener(new View.OnClickListener() {
             @Override
