@@ -5,37 +5,34 @@
 package ca.greenlypebble.it.smartplant.ui.dashboard;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.getbase.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import ca.greenlypebble.it.smartplant.FeedbackPopActivity;
 import ca.greenlypebble.it.smartplant.HealthActivity;
 import ca.greenlypebble.it.smartplant.HistoryActivity;
-import ca.greenlypebble.it.smartplant.MainActivity;
 import ca.greenlypebble.it.smartplant.R;
-import ca.greenlypebble.it.smartplant.RatePopActivity;
 import ca.greenlypebble.it.smartplant.SensorsActivity;
+
+
 
 public class DashboardFragment extends Fragment {
 
     private Page2 page2;
     FloatingActionButton fabBtn,fadfeedbackBtn;
 
-    ImageButton sensorButton, historyButton, healthButton;
+    ImageButton sensorButton, historyButton, healthButton,learnButton;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -46,6 +43,7 @@ public class DashboardFragment extends Fragment {
         sensorButton = (ImageButton) root.findViewById(R.id.sensorsButton);
         historyButton = (ImageButton) root.findViewById(R.id.historyButton);
         healthButton =  (ImageButton) root.findViewById(R.id.healthButton);
+        learnButton = (ImageButton) root.findViewById(R.id.learnButton);
         fabBtn = (FloatingActionButton) root.findViewById(R.id.fabBtn);
         fadfeedbackBtn = (FloatingActionButton) root.findViewById(R.id.fabfeedbackBtn);
 
@@ -91,6 +89,14 @@ public class DashboardFragment extends Fragment {
             public void onClick(View v) {
                 Intent healthScreen = new Intent(getContext(), HealthActivity.class);
                 startActivity(healthScreen);
+            }
+        });
+
+        learnButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent learnIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://can-plant.ca/"));
+                startActivity(learnIntent);
             }
         });
 
