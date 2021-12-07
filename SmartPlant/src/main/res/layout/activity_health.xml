@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SensorsActivity">
+    tools:context=".HealthActivity">
 
     <Button
-        android:id="@+id/exitSensor"
+        android:id="@+id/exitHealth"
         android:layout_width="86dp"
         android:layout_height="42dp"
         android:text="Exit"
@@ -34,16 +34,15 @@
         app:layout_constraintVertical_bias="0.499" />
 
     <Button
-        android:id="@+id/addSensor"
+        android:id="@+id/addPlant"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Sensor"
+        android:text="Add Plant"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.827" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

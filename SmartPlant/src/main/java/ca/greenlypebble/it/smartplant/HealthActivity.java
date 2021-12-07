@@ -1,29 +1,29 @@
 package ca.greenlypebble.it.smartplant;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class SensorsActivity extends Activity {
+public class HealthActivity extends Activity {
 
-    Button addSensor, exitSensor;
+    Button addPlant, exitHealth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sensors);
+        setContentView(R.layout.activity_health);
 
-        addSensor = (Button) findViewById(R.id.addSensor);
-        exitSensor = (Button) findViewById(R.id.exitSensor);
+        addPlant = (Button) findViewById(R.id.addPlant);
+        exitHealth = (Button) findViewById(R.id.exitHealth);
 
-        exitSensor.setOnClickListener(new View.OnClickListener() {
+        exitHealth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
-
-
     }
 }
