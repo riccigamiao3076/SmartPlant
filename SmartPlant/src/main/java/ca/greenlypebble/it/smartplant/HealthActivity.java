@@ -6,10 +6,16 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
+import com.getbase.floatingactionbutton.FloatingActionButton;
+import com.getbase.floatingactionbutton.FloatingActionsMenu;
+import com.google.android.material.snackbar.Snackbar;
 
 public class HealthActivity extends Activity {
 
     Button addPlant, exitHealth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +25,7 @@ public class HealthActivity extends Activity {
         addPlant = (Button) findViewById(R.id.addPlant);
         exitHealth = (Button) findViewById(R.id.exitHealth);
 
+
         exitHealth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -26,4 +33,5 @@ public class HealthActivity extends Activity {
             }
         });
     }
+
 }

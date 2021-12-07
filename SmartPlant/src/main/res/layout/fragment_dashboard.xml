@@ -90,5 +90,38 @@
         app:layout_constraintVertical_bias="0.314"
         tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
 
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="18dp"
+        app:fab_expandDirection="up"
+        app:fab_labelsPosition="left"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.949"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.856">
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorDisabled="#FFF"
+            app:fab_icon="@drawable/circlecheck"
+            app:fab_size="mini"
+            app:fab_title="Icon 1" />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorDisabled="#FFF"
+            app:fab_icon="@drawable/feedback"
+            app:fab_size="mini"
+            app:fab_title="Icon 1" />
+
+
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

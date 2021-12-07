@@ -19,6 +19,9 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.getbase.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+
 import ca.greenlypebble.it.smartplant.FeedbackPopActivity;
 import ca.greenlypebble.it.smartplant.HealthActivity;
 import ca.greenlypebble.it.smartplant.HistoryActivity;
@@ -30,6 +33,7 @@ import ca.greenlypebble.it.smartplant.SensorsActivity;
 public class DashboardFragment extends Fragment {
 
     private Page2 page2;
+    FloatingActionButton fabBtn;
 
     ImageButton sensorButton, historyButton, healthButton;
 
@@ -42,6 +46,16 @@ public class DashboardFragment extends Fragment {
         sensorButton = (ImageButton) root.findViewById(R.id.sensorsButton);
         historyButton = (ImageButton) root.findViewById(R.id.historyButton);
         healthButton =  (ImageButton) root.findViewById(R.id.healthButton);
+        fabBtn = (FloatingActionButton) root.findViewById(R.id.fabBtn);
+
+        //FAB Button
+        fabBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Snackbar.make(v, "Health Plant 100%", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
 
         sensorButton.setOnClickListener(new View.OnClickListener() {
             @Override

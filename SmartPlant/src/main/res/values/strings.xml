@@ -81,4 +81,5 @@
     <string name="ok">OK</string>
     <string name="feedbackSelected">Feedback Selected</string>
     <string name="plantName">Plant Name</string>
+    <string name="submit">fabBtn</string>
 </resources>
