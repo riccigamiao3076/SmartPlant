@@ -95,4 +95,11 @@
     <string name="watervalue">waterValue</string>
     <string name="exit">Exit</string>
     <string name="history">history</string>
+    <string name="phase_3">Phase 3</string>
+    <string name="phase_2">Phase 2</string>
+    <string name="phase_1">Phase 1</string>
+    <string name="current_phase_phase_2">Current Phase: Phase 2</string>
+    <string name="phase3">phase</string>
+    <string name="phase2">phase</string>
+    <string name="phase1">phase1</string>
 </resources>

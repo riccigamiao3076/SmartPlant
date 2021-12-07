@@ -37,12 +37,12 @@
     <string name="smart_plant">Smart Plant</string>
     <string name="homeTItle">Smart Plant Home</string>
     <string name="profileTitle">Smart Plant Profile</string>
-    <string name="myProfile">My Profile</string>
-    <string name="idNum">ID Number</string>
+    <string name="myProfile">My Email</string>
+    <string name="idNum">User ID</string>
     <string name="preferences">Preferences</string>
     <string name="contactUs">Contact us</string>
     <string name="about">About</string>
-    <string name="rateTheApp">Rate the app</string>
+    <string name="rateTheApp">Rate App</string>
     <string name="signOut">SIGN OUT</string>
     <string name="temp">Temp</string>
     <string name="string_temp">temp</string>
@@ -51,6 +51,7 @@
     <string name="accavatar">accAvatar</string>
     <string name="logo">logo</string>
     <string name="googlelogin">Google Login</string>
+    <string name="web_client_id" translatable="false">349442084520-1nng74hadef4o0i3saaqhkb49ukdtf90.apps.googleusercontent.com</string>
     <string name="googleLogin">Google Login</string>
     <string name="update_plant">Update Plant</string>
     <string name="plant_name">Plant Name:</string>
@@ -63,7 +64,7 @@
     <string name="no">No</string>
     <string name="enterEmail">Please enter your Email</string>
     <string name="enterPassword">Please enter your Password</string>
-    <string name="registerSuccess">Registration successful</string>
+    <string name="registerSuccess">Registration Successful</string>
     <string name="registerError">\"Registration Error: \"</string>
     <string name="signInSuccess">Signed in successful</string>
     <string name="signInError">\"Sign in error: \"</string>
@@ -82,7 +83,8 @@
     <string name="plantName">Plant Name</string>
     <string name="submit">fabBtn</string>
     <string name="tempVal">tempVal</string>
-    <string name="readbutton">Button</string>
+    <string name="temparature">temp</string>
+    <string name="readbutton">Read Data Sensors</string>
     <string name="humid">humidVal</string>
     <string name="humidval">humidVal</string>
     <string name="motion_value">motion value</string>
@@ -93,4 +95,11 @@
     <string name="watervalue">waterValue</string>
     <string name="exit">Exit</string>
     <string name="history">history</string>
+    <string name="phase_3">Phase 3</string>
+    <string name="phase_2">Phase 2</string>
+    <string name="phase_1">Phase 1</string>
+    <string name="current_phase_phase_2">Current Phase: Phase 2</string>
+    <string name="phase3">phase</string>
+    <string name="phase2">phase</string>
+    <string name="phase1">phase1</string>
 </resources>
