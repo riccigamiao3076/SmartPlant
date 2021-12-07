@@ -82,4 +82,10 @@
     <string name="feedbackSelected">Feedback Selected</string>
     <string name="plantName">Plant Name</string>
     <string name="submit">fabBtn</string>
+    <string name="tempVal">tempVal</string>
+    <string name="temparature">temp</string>
+    <string name="exit">Exit</string>
+    <string name="readbutton">Read Data Sensors</string>
+    <string name="humid">humidVal</string>
+    <string name="humidval">humidVal</string>
 </resources>

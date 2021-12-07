@@ -31,6 +31,7 @@ public class HealthActivity extends Activity {
             public void onClick(View v) {
                 finish();
             }
+
         });
     }
 
