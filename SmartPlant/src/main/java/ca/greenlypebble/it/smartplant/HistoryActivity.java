@@ -5,19 +5,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class SensorsActivity extends Activity {
+public class HistoryActivity extends Activity {
 
-    Button addSensor, exitSensor;
+    Button exitHistory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sensors);
+        setContentView(R.layout.activity_history);
 
-        addSensor = (Button) findViewById(R.id.addSensor);
-        exitSensor = (Button) findViewById(R.id.exitHistory);
+        exitHistory = (Button) findViewById(R.id.exitHistory);
 
-        exitSensor.setOnClickListener(new View.OnClickListener() {
+        exitHistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();

@@ -20,6 +20,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import ca.greenlypebble.it.smartplant.FeedbackPopActivity;
+import ca.greenlypebble.it.smartplant.HistoryActivity;
 import ca.greenlypebble.it.smartplant.MainActivity;
 import ca.greenlypebble.it.smartplant.R;
 import ca.greenlypebble.it.smartplant.RatePopActivity;
@@ -29,7 +30,7 @@ public class DashboardFragment extends Fragment {
 
     private Page2 page2;
 
-    ImageButton sensorButton;
+    ImageButton sensorButton, historyButton;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -38,12 +39,21 @@ public class DashboardFragment extends Fragment {
 
 
         sensorButton = (ImageButton) root.findViewById(R.id.sensorsButton);
+        historyButton = (ImageButton) root.findViewById(R.id.historyButton);
 
         sensorButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent sensorScreen = new Intent(getContext(), SensorsActivity.class);
                 startActivity(sensorScreen);
+            }
+        });
+
+        historyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent historyScreen = new Intent(getContext(), HistoryActivity.class);
+                startActivity(historyScreen);
             }
         });
 

@@ -12,6 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartPlant">
         <activity
+            android:name=".HistoryActivity"
+            android:exported="false"
+            android:label="History"
+            android:theme="@style/PopUp" />
+        <activity
             android:name=".SensorsActivity"
             android:exported="false"
             android:label="Sensors"
