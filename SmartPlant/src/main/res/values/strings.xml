@@ -84,7 +84,6 @@
     <string name="submit">fabBtn</string>
     <string name="tempVal">tempVal</string>
     <string name="temparature">temp</string>
-    <string name="exit">Exit</string>
     <string name="readbutton">Read Data Sensors</string>
     <string name="humid">humidVal</string>
     <string name="humidval">humidVal</string>
@@ -94,4 +93,6 @@
     <string name="lightval">lightVal</string>
     <string name="waterval">waterVal</string>
     <string name="watervalue">waterValue</string>
+    <string name="exit">Exit</string>
+    <string name="history">history</string>
 </resources>

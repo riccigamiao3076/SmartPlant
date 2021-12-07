@@ -82,7 +82,6 @@
     <string name="plantName">Plant Name</string>
     <string name="submit">fabBtn</string>
     <string name="tempVal">tempVal</string>
-    <string name="exit">Exit</string>
     <string name="readbutton">Button</string>
     <string name="humid">humidVal</string>
     <string name="humidval">humidVal</string>
@@ -92,4 +91,6 @@
     <string name="lightval">lightVal</string>
     <string name="waterval">waterVal</string>
     <string name="watervalue">waterValue</string>
+    <string name="exit">Exit</string>
+    <string name="history">history</string>
 </resources>

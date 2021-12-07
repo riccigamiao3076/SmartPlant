@@ -32,11 +32,14 @@ public class SensorsActivity extends Activity {
         lightVal = (TextView) findViewById(R.id.lightVal);
         waterVal = (TextView) findViewById(R.id.waterVal);
 
-        tempDatabase = FirebaseDatabase.getInstance().getReference().child("Temperature");
-        humidDatabase = FirebaseDatabase.getInstance().getReference().child("Humidity");
-        motionDatabase = FirebaseDatabase.getInstance().getReference().child("Motion Sensor");
-        lightDatabase = FirebaseDatabase.getInstance().getReference().child("Light Sensor");
-        waterDatabase = FirebaseDatabase.getInstance().getReference().child("Water level");
+        tempDatabase = FirebaseDatabase.getInstance().getReference().child("User Info").child("GuOK1xzu0SPiutMh2yzG7TVVQnA3").child("Temperature");
+        humidDatabase = FirebaseDatabase.getInstance().getReference().child("User Info").child("GuOK1xzu0SPiutMh2yzG7TVVQnA3").child("Humidity");
+        motionDatabase = FirebaseDatabase.getInstance().getReference().child("User Info").child("GuOK1xzu0SPiutMh2yzG7TVVQnA3").child("Motion Sensor");
+        lightDatabase = FirebaseDatabase.getInstance().getReference().child("User Info").child("GuOK1xzu0SPiutMh2yzG7TVVQnA3").child("Light Sensor");
+        waterDatabase = FirebaseDatabase.getInstance().getReference().child("User Info").child("GuOK1xzu0SPiutMh2yzG7TVVQnA3").child("Water level");
+
+
+        //rootDatabaseRef = databaseReference.child("User Info").child(userID).child(getString(R.string.plantName));
 
         exitSensor.setOnClickListener(new View.OnClickListener() {
             @Override

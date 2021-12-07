@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
         updateName = findViewById(R.id.plantNameUpdate);
         status = findViewById(R.id.statusText);
 
-        rootDatabaseRef = databaseReference.child("User Info").child(userID.toString()).child(getString(R.string.plantName));
+        rootDatabaseRef = databaseReference.child("User Info").child(userID).child(getString(R.string.plantName));
 
         readName.setOnClickListener(new View.OnClickListener() {
             @Override
