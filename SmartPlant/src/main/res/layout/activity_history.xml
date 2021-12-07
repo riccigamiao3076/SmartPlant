@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#9C8BC34A"
     tools:context=".HistoryActivity">
 
 
@@ -14,34 +15,103 @@
         android:text="@string/exit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.433"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.929" />
+        app:layout_constraintVertical_bias="0.976" />
 
     <TextView
         android:id="@+id/phase1"
         android:layout_width="103dp"
         android:layout_height="40dp"
-        android:text="Phase 1"
-        tools:layout_editor_absoluteX="40dp"
-        tools:layout_editor_absoluteY="345dp" />
+        android:fontFamily="@font/chela_one"
+        android:text="@string/phase_1"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.191"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.418" />
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="159dp"
-        android:layout_height="176dp"
+        android:id="@+id/p1"
+        android:layout_width="172dp"
+        android:layout_height="181dp"
+        android:contentDescription="@string/phase1"
         android:src="@drawable/phase1"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="154dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.125"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.174" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/p2"
         android:layout_width="144dp"
         android:layout_height="181dp"
+        android:contentDescription="@string/phase2"
         android:src="@drawable/phase2"
-        tools:layout_editor_absoluteX="248dp"
-        tools:layout_editor_absoluteY="154dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.928"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.158" />
+
+    <ImageView
+        android:id="@+id/p3"
+        android:layout_width="178dp"
+        android:layout_height="174dp"
+        android:contentDescription="@string/phase3"
+        android:src="@drawable/phase3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.648" />
+
+    <TextView
+        android:id="@+id/phase3"
+        android:layout_width="103dp"
+        android:layout_height="40dp"
+        android:fontFamily="@font/chela_one"
+        android:text="@string/phase_3"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.804" />
+
+    <TextView
+        android:id="@+id/phase2"
+        android:layout_width="103dp"
+        android:layout_height="40dp"
+        android:fontFamily="@font/chela_one"
+        android:text="@string/phase_2"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.85"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.418" />
+
+    <TextView
+        android:id="@+id/currentPhase"
+        android:layout_width="259dp"
+        android:layout_height="47dp"
+        android:text="@string/current_phase_phase_2"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.893" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
