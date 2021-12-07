@@ -88,4 +88,10 @@
     <string name="readbutton">Read Data Sensors</string>
     <string name="humid">humidVal</string>
     <string name="humidval">humidVal</string>
+    <string name="motion_value">motion value</string>
+    <string name="motionval">motionVal</string>
+    <string name="lightValue">value</string>
+    <string name="lightval">lightVal</string>
+    <string name="waterval">waterVal</string>
+    <string name="watervalue">waterValue</string>
 </resources>
