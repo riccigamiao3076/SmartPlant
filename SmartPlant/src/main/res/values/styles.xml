@@ -6,5 +6,10 @@
         <item name = "android:windowCloseOnTouchOutside">true</item>
     </style>
 
+    <style name="Sensors">
+        <item name = "android:windowIsTranslucent">true</item>
+        <item name = "android:windowCloseOnTouchOutside">true</item>
+    </style>
+
 
 </resources>

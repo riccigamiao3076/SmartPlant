@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
 
         databaseReference = firebaseDatabase.getReference();
 
-        String userEmail = FirebaseAuth.getInstance().getCurrentUser().getEmail();
+        String userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
         //Firebase Database
 //        DatabaseReference accountLogin = database.getReference("Account");
@@ -109,6 +109,8 @@ public class MainActivity extends AppCompatActivity {
 //        DatabaseReference soilMoisture = database.getReference("Soil Moisture");
 //        DatabaseReference lightLevels = database.getReference("Light Levels");
 //        DatabaseReference motionSensor = database.getReference("Moisture");
+
+
 //
 //        accountLogin.setValue("Login Successful");
 //        temp.setValue("Temperature: 75 Degrees");
@@ -117,12 +119,12 @@ public class MainActivity extends AppCompatActivity {
 //        lightLevels.setValue("Light levels: 500 Lumens");
 //        motionSensor.setValue("Motion sensor: Active");
 
-        databaseReference.child("User Info").child(userEmail.toString()).child("Account").setValue("Active");
-        databaseReference.child("User Info").child(userEmail.toString()).child("Humidity").setValue("55%");
-        databaseReference.child("User Info").child(userEmail.toString()).child("Light Levels").setValue("500 Lumens");
-        databaseReference.child("User Info").child(userEmail.toString()).child("Motion Sensor").setValue("Active");
-        databaseReference.child("User Info").child(userEmail.toString()).child("Temperature").setValue("75 Degrees");
-        databaseReference.child("User Info").child(userEmail.toString()).child("Login").setValue("Succesful");
+        databaseReference.child("User Info").child(userID).child("Account").setValue("Active");
+        databaseReference.child("User Info").child(userID.toString()).child("Humidity").setValue("55%");
+        databaseReference.child("User Info").child(userID.toString()).child("Light Levels").setValue("500 Lumens");
+        databaseReference.child("User Info").child(userID.toString()).child("Motion Sensor").setValue("Active");
+        databaseReference.child("User Info").child(userID.toString()).child("Temperature").setValue("75 Degrees");
+        databaseReference.child("User Info").child(userID.toString()).child("Login").setValue("Succesful");
 
 //        databaseReference.child("User Info).child(userID.toString()).child(subjectT.getText().toString()).child("Name").setValue(userName.getText().toString());
 //        databaseReference.child("User Info").child(userID.toString()).child(subjectT.getText().toString()).child("Email").setValue(userEAdd.getText().toString());
@@ -137,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
         updateName = findViewById(R.id.plantNameUpdate);
         status = findViewById(R.id.statusText);
 
-        rootDatabaseRef = databaseReference.child("User Info").child(userEmail.toString()).child(getString(R.string.plantName));
+        rootDatabaseRef = databaseReference.child("User Info").child(userID.toString()).child(getString(R.string.plantName));
 
         readName.setOnClickListener(new View.OnClickListener() {
             @Override
