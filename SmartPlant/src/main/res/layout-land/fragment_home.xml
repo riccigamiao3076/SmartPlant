@@ -127,5 +127,54 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.374" />
 
+    <EditText
+        android:id="@+id/plantNameUpdate"
+        android:layout_width="154dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:hint="@string/plant_name"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.867"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/updatePlant"
+        android:layout_width="142dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#8BC34A"
+        android:text="@string/update_plant"
+        android:textColor="#37474F"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.139"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.92"
+        tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
+
+    <Button
+        android:id="@+id/readNameBtn"
+        android:layout_width="146dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#8BC34A"
+        android:text="@string/read_name"
+        android:textColor="#37474F"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.864"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.92"
+        tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
