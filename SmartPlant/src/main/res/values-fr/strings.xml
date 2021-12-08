@@ -104,4 +104,5 @@
     <string name="phase1">phase1</string>
     <string name="maintain">Continuez à entretenir votre usine pendant
 santé optimale.</string>
+    <string name="alert">⚠ PAS DES ALERTES ⚠</string>
 </resources>
