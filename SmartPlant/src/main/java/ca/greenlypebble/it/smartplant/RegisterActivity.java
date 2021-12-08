@@ -30,6 +30,7 @@ public class RegisterActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
@@ -38,7 +39,6 @@ public class RegisterActivity extends Activity {
         nameReg = findViewById(R.id.eTextFullName);
         pass2Reg = findViewById(R.id.eTextConfirmPass);
         numReg = findViewById(R.id.eTextPhoneNum);
-
         tvLoginHere = findViewById(R.id.tvLoginHere);
         bRegister = findViewById(R.id.bRegister);
 
@@ -106,7 +106,6 @@ public class RegisterActivity extends Activity {
                 Pattern.compile("^[a-zA-z ]*$", Pattern.CASE_INSENSITIVE);
         Matcher matcher = fNameRegex.matcher(fName);
         return matcher.find();
-
     }
 
     public static boolean checkEmailForValidity(String email) {

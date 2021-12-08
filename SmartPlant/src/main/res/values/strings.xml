@@ -102,4 +102,8 @@
     <string name="phase3">phase</string>
     <string name="phase2">phase</string>
     <string name="phase1">phase1</string>
+    <string name="maintain">Continue maintaining your plant for
+optimal health.</string>
+    <string name="alert">⚠ NO ALERTS ⚠</string>
+    <string name="yourplant">Your Plant:</string>
 </resources>

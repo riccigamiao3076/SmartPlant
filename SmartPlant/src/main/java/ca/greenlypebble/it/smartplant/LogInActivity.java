@@ -35,9 +35,9 @@ public class LogInActivity extends Activity {
     CheckBox mCheckBoxRemember;
     SharedPreferences mPrefs;
     TextView signUp;
-    final String PREFS_NAME = "PrefsFile";
-
     FirebaseAuth fBase;
+
+    final String PREFS_NAME = "PrefsFile";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +65,6 @@ public class LogInActivity extends Activity {
 
                 emailAdd.getText().clear();
                 passWord.getText().clear();
-
             }
         });
 
@@ -102,7 +101,6 @@ public class LogInActivity extends Activity {
                 startActivity(new Intent(LogInActivity.this, RegisterActivity.class));
             }
         });
-
     }
 
     private void getPreferencesData() {
@@ -118,8 +116,5 @@ public class LogInActivity extends Activity {
         if (sp.contains("pref_check"));
             Boolean b = sp.getBoolean("pref_check", false);
             mCheckBoxRemember.setChecked(b);
-
-
         }
-
 }

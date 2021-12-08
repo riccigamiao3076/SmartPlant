@@ -22,7 +22,5 @@ public class HistoryActivity extends Activity {
                 finish();
             }
         });
-
-
     }
 }

@@ -28,10 +28,7 @@ public class RatePopActivity extends Activity {
     RatingBar rateBar;
     Button sendDatabtn;
 
-//    EditText userName, userPhone, userEAdd;
     TextView ratingInfotv;
-//    EditText feedback;
-
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
@@ -59,11 +56,6 @@ public class RatePopActivity extends Activity {
         rateBar = findViewById(R.id.ratingBar);
         sendDatabtn = findViewById(R.id.popRateButton);
 
-//        userName = findViewById(R.id.nameRev);
-//        userPhone = findViewById(R.id.numRev);
-//        userEAdd = findViewById(R.id.emailRev);
-//        feedback = findViewById(R.id.feedbackRev);
-//
         ratingInfotv = findViewById(R.id.tvRate);
         firebaseDatabase = FirebaseDatabase.getInstance();
 
@@ -101,12 +93,6 @@ public class RatePopActivity extends Activity {
 
             String userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
-//            databaseReference.child("User Reviews").child(userName.getText().toString()).child("Phone").setValue(userPhone.getText().toString());
-//            databaseReference.child("User Reviews").child(userName.getText().toString()).child("Name").setValue(userName.getText().toString());
-//            databaseReference.child("User Reviews").child(userName.getText().toString()).child("Email").setValue(userEAdd.getText().toString());
             databaseReference.child("Ratings").child(userID.toString()).child("Rate").setValue(ratingInfotv.getText().toString());
-//            databaseReference.child("User Reviews").child(userName.getText().toString()).child("Feedback").setValue(feedback.getText().toString());
-
-
     }
 }

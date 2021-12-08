@@ -16,14 +16,16 @@ import com.google.firebase.database.ValueEventListener;
 
 public class SensorsActivity extends Activity {
 
-    Button addSensor, exitSensor, readBtn;
+    Button exitSensor, readBtn;
     DatabaseReference tempDatabase, humidDatabase, motionDatabase, lightDatabase, waterDatabase;
     TextView tempVal, humidVal, motionVal, lightVal, waterVal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sensors);
+
         exitSensor = (Button) findViewById(R.id.exitSensor);
         readBtn = (Button) findViewById(R.id.readBtn);
         tempVal = (TextView) findViewById(R.id.tempVal);
@@ -37,9 +39,6 @@ public class SensorsActivity extends Activity {
         motionDatabase = FirebaseDatabase.getInstance().getReference().child("User Info").child("GuOK1xzu0SPiutMh2yzG7TVVQnA3").child("Motion Sensor");
         lightDatabase = FirebaseDatabase.getInstance().getReference().child("User Info").child("GuOK1xzu0SPiutMh2yzG7TVVQnA3").child("Light Sensor");
         waterDatabase = FirebaseDatabase.getInstance().getReference().child("User Info").child("GuOK1xzu0SPiutMh2yzG7TVVQnA3").child("Water level");
-
-
-        //rootDatabaseRef = databaseReference.child("User Info").child(userID).child(getString(R.string.plantName));
 
         exitSensor.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,12 +58,10 @@ public class SensorsActivity extends Activity {
                             String data=snapshot.getValue().toString();
                             tempVal.setText(data);
                         }
-
                     }
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
-
                     }
                 });
                 humidDatabase.addValueEventListener(new ValueEventListener() {
@@ -75,12 +72,10 @@ public class SensorsActivity extends Activity {
                             String data=snapshot.getValue().toString();
                             humidVal.setText(data);
                         }
-
                     }
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
-
                     }
                 });
                 motionDatabase.addValueEventListener(new ValueEventListener() {
@@ -91,12 +86,10 @@ public class SensorsActivity extends Activity {
                             String data=snapshot.getValue().toString();
                             motionVal.setText(data);
                         }
-
                     }
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
-
                     }
                 });
                 lightDatabase.addValueEventListener(new ValueEventListener() {
@@ -107,12 +100,10 @@ public class SensorsActivity extends Activity {
                             String data=snapshot.getValue().toString();
                             lightVal.setText(data);
                         }
-
                     }
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
-
                     }
                 });
                 waterDatabase.addValueEventListener(new ValueEventListener() {
@@ -123,7 +114,6 @@ public class SensorsActivity extends Activity {
                             String data=snapshot.getValue().toString();
                             waterVal.setText(data);
                         }
-
                     }
 
                     @Override

@@ -99,7 +99,6 @@ public class FeedbackPopActivity extends Activity {
 
                     finish();
                 }
-
             }
 
             @Override
@@ -107,6 +106,5 @@ public class FeedbackPopActivity extends Activity {
 
             }
         });
-
     }
 }

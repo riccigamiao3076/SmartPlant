@@ -16,8 +16,6 @@ public class Page3 extends ViewModel {
 
     public Page3() {
         mText = new MutableLiveData<>();
-        mText.setValue("PLACERHOLDER (3)");
-
 
     }
 

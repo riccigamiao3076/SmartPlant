@@ -97,40 +97,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-        databaseReference = firebaseDatabase.getReference();
-
         String userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
-        //Firebase Database
-//        DatabaseReference accountLogin = database.getReference("Account");
-//        DatabaseReference temp = database.getReference("Temperature");
-//        DatabaseReference humid = database.getReference("Humidity");
-//        DatabaseReference soilMoisture = database.getReference("Soil Moisture");
-//        DatabaseReference lightLevels = database.getReference("Light Levels");
-//        DatabaseReference motionSensor = database.getReference("Moisture");
-
-
-//
-//        accountLogin.setValue("Login Successful");
-//        temp.setValue("Temperature: 75 Degrees");
-//        humid.setValue("Humidity: 55%");
-//        soilMoisture.setValue("Soil Moisture: 50%");
-//        lightLevels.setValue("Light levels: 500 Lumens");
-//        motionSensor.setValue("Motion sensor: Active");
-
+        databaseReference = firebaseDatabase.getReference();
         databaseReference.child("User Info").child(userID).child("Account").setValue("Active");
         databaseReference.child("User Info").child(userID.toString()).child("Humidity").setValue("55%");
         databaseReference.child("User Info").child(userID.toString()).child("Light Levels").setValue("500 Lumens");
         databaseReference.child("User Info").child(userID.toString()).child("Motion Sensor").setValue("Active");
         databaseReference.child("User Info").child(userID.toString()).child("Temperature").setValue("75 Degrees");
         databaseReference.child("User Info").child(userID.toString()).child("Login").setValue("Succesful");
-
-//        databaseReference.child("User Info).child(userID.toString()).child(subjectT.getText().toString()).child("Name").setValue(userName.getText().toString());
-//        databaseReference.child("User Info").child(userID.toString()).child(subjectT.getText().toString()).child("Email").setValue(userEAdd.getText().toString());
-//        databaseReference.child("User Info").child(userID.toString()).child(subjectT.getText().toString()).child("Feedback").setValue(feedback.getText().toString());
-
-
 
         //Update Plant Name Database:
         readName = findViewById(R.id.readNameBtn);
@@ -153,7 +128,6 @@ public class MainActivity extends AppCompatActivity {
                             plantName.setText(data);
                         }
                     }
-
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {

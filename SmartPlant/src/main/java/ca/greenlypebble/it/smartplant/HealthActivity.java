@@ -16,14 +16,12 @@ public class HealthActivity extends Activity {
 
     Button addPlant, exitHealth;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_health);
 
         exitHealth = (Button) findViewById(R.id.exitHealth);
-
 
         exitHealth.setOnClickListener(new View.OnClickListener() {
             @Override
