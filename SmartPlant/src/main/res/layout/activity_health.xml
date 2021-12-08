@@ -13,8 +13,7 @@
         android:layout_height="110dp"
         android:layout_marginTop="376dp"
         android:fontFamily="sans-serif"
-        android:text="Continue maintaining your plant for
-optimal health."
+        android:text="@string/maintain"
         android:textAlignment="center"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
