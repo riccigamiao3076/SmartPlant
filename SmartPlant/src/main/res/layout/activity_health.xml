@@ -7,10 +7,28 @@
     tools:context=".HealthActivity">
 
     <TextView
+        android:id="@+id/tvcSoon3"
+        android:layout_width="226dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="376dp"
+        android:fontFamily="sans-serif"
+        android:text="Continue maintaining your plant for
+optimal health."
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.628" />
+
+    <TextView
         android:id="@+id/tvcSoon2"
         android:layout_width="226dp"
         android:layout_height="110dp"
         android:layout_marginTop="376dp"
+        android:layout_marginBottom="245dp"
         android:fontFamily="sans-serif"
         android:text="⚠ NO ALERTS ⚠"
         android:textAlignment="center"
@@ -20,7 +38,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.004" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/exitHealth"
@@ -54,7 +72,7 @@
         android:layout_width="150dp"
         android:layout_height="211dp"
         android:layout_marginStart="128dp"
-        android:layout_marginTop="136dp"
+        android:layout_marginTop="108dp"
         android:src="@drawable/health"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
