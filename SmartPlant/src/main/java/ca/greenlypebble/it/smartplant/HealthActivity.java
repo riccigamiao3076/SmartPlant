@@ -22,7 +22,6 @@ public class HealthActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_health);
 
-        addPlant = (Button) findViewById(R.id.addPlant);
         exitHealth = (Button) findViewById(R.id.exitHealth);
 
 
