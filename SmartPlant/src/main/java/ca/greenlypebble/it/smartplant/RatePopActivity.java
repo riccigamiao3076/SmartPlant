@@ -94,7 +94,5 @@ public class RatePopActivity extends Activity {
             String userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
             databaseReference.child("Ratings").child(userID.toString()).child("Rate").setValue(ratingInfotv.getText().toString());
-
-
     }
 }

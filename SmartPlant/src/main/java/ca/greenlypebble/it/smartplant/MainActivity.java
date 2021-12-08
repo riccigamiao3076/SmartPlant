@@ -97,11 +97,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-        databaseReference = firebaseDatabase.getReference();
-
         String userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
+        databaseReference = firebaseDatabase.getReference();
         databaseReference.child("User Info").child(userID).child("Account").setValue("Active");
         databaseReference.child("User Info").child(userID.toString()).child("Humidity").setValue("55%");
         databaseReference.child("User Info").child(userID.toString()).child("Light Levels").setValue("500 Lumens");
@@ -130,7 +128,6 @@ public class MainActivity extends AppCompatActivity {
                             plantName.setText(data);
                         }
                     }
-
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
