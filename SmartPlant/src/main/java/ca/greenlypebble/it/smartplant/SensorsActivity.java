@@ -16,7 +16,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class SensorsActivity extends Activity {
 
-    Button addSensor, exitSensor, readBtn;
+    Button exitSensor, readBtn;
     DatabaseReference tempDatabase, humidDatabase, motionDatabase, lightDatabase, waterDatabase;
     TextView tempVal, humidVal, motionVal, lightVal, waterVal;
 
@@ -38,8 +38,6 @@ public class SensorsActivity extends Activity {
         lightDatabase = FirebaseDatabase.getInstance().getReference().child("User Info").child("GuOK1xzu0SPiutMh2yzG7TVVQnA3").child("Light Sensor");
         waterDatabase = FirebaseDatabase.getInstance().getReference().child("User Info").child("GuOK1xzu0SPiutMh2yzG7TVVQnA3").child("Water level");
 
-
-        //rootDatabaseRef = databaseReference.child("User Info").child(userID).child(getString(R.string.plantName));
 
         exitSensor.setOnClickListener(new View.OnClickListener() {
             @Override
