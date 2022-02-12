@@ -27,25 +27,22 @@
         android:id="@+id/learnButton"
         android:layout_width="181dp"
         android:layout_height="168dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         android:backgroundTint="#9C8BC34A"
         android:contentDescription="@string/learnplants"
         android:scaleType="fitXY"
         android:src="@drawable/learnbuttonnew"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/historyButton"
-        app:layout_constraintTop_toBottomOf="@+id/healthButton"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.93"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.641"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/historyButton"
         android:layout_width="181dp"
         android:layout_height="168dp"
-        android:layout_marginTop="16dp"
         android:backgroundTint="#9C8BC34A"
         android:contentDescription="@string/planthistory"
         android:scaleType="fitXY"
@@ -54,8 +51,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.069"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sensorsButton"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.641"
         tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -68,8 +65,8 @@
         android:src="@drawable/planthealthnew"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
-        app:layout_constraintStart_toEndOf="@+id/sensorsButton"
+        app:layout_constraintHorizontal_bias="0.93"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.314"
         tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
@@ -98,10 +95,10 @@
         app:fab_labelsPosition="left"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.949"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.856">
+        app:layout_constraintVertical_bias="0.88">
 
         <com.getbase.floatingactionbutton.FloatingActionButton
             android:id="@+id/fabBtn"

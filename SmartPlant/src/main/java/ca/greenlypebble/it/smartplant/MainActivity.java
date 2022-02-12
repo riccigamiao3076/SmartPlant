@@ -24,14 +24,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -42,6 +34,14 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 //The two design patterns used are Structural and Behavioral design patterns.
@@ -108,17 +108,15 @@ public class MainActivity extends AppCompatActivity {
         databaseReference.child("User Info").child(userID.toString()).child("Login").setValue("Succesful");
 
         //Update Plant Name Database:
-        readName = findViewById(R.id.readNameBtn);
         plantName = findViewById(R.id.smartPlant);
         updateBtn = findViewById(R.id.updatePlant);
         updateName = findViewById(R.id.plantNameUpdate);
         status = findViewById(R.id.statusText);
-
         rootDatabaseRef = databaseReference.child("User Info").child(userID).child(getString(R.string.plantName));
 
-        readName.setOnClickListener(new View.OnClickListener() {
+        updateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+                public void onClick (View v){
                 rootDatabaseRef.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -131,17 +129,8 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
-
                     }
                 });
-            }
-        });
-
-        updateBtn.setOnClickListener(new View.OnClickListener()
-
-            {
-                @Override
-                public void onClick (View v){
                 String data = updateName.getText().toString();
                 rootDatabaseRef.setValue(data);
             }

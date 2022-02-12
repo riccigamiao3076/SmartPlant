@@ -105,26 +105,10 @@
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.141"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.822"
-        tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
-
-    <Button
-        android:id="@+id/readNameBtn"
-        android:layout_width="146dp"
-        android:layout_height="48dp"
-        android:backgroundTint="#8BC34A"
-        android:text="@string/read_name"
-        android:textColor="#37474F"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.856"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.822"
+        app:layout_constraintVertical_bias="0.868"
         tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
 
     <TextView

@@ -9,8 +9,8 @@
 
     <TextView
         android:id="@+id/smartPlant"
-        android:layout_width="335dp"
-        android:layout_height="79dp"
+        android:layout_width="321dp"
+        android:layout_height="37dp"
         android:fontFamily="casual"
         android:gravity="center"
         android:text="@string/homeTItle"
@@ -34,7 +34,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.226" />
+        app:layout_constraintVertical_bias="0.099" />
 
     <TextView
         android:id="@+id/dobPlant"
@@ -61,10 +61,10 @@
         android:textColor="#37474F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.11"
+        app:layout_constraintHorizontal_bias="0.111"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.707" />
+        app:layout_constraintVertical_bias="0.683" />
 
     <Button
         android:id="@+id/tempsButton"
@@ -75,10 +75,10 @@
         android:textColor="#37474F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.941"
+        app:layout_constraintHorizontal_bias="0.932"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.707"
+        app:layout_constraintVertical_bias="0.683"
         tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
 
     <Button
@@ -93,13 +93,13 @@
         app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.707"
+        app:layout_constraintVertical_bias="0.683"
         tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
 
     <TextView
         android:id="@+id/textViewPname"
-        android:layout_width="146dp"
-        android:layout_height="47dp"
+        android:layout_width="142dp"
+        android:layout_height="32dp"
         android:text="@string/peppermint"
         android:textAlignment="center"
         android:textColor="#000000"
@@ -109,7 +109,7 @@
         app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.17" />
+        app:layout_constraintVertical_bias="0.101" />
 
     <TextView
         android:id="@+id/growthPlant"
@@ -138,42 +138,26 @@
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintHorizontal_bias="0.667"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.867"
+        app:layout_constraintVertical_bias="0.819"
         tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/updatePlant"
-        android:layout_width="142dp"
-        android:layout_height="48dp"
+        android:layout_width="131dp"
+        android:layout_height="38dp"
         android:backgroundTint="#8BC34A"
         android:text="@string/update_plant"
         android:textColor="#37474F"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.139"
+        app:layout_constraintHorizontal_bias="0.358"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.92"
-        tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
-
-    <Button
-        android:id="@+id/readNameBtn"
-        android:layout_width="146dp"
-        android:layout_height="48dp"
-        android:backgroundTint="#8BC34A"
-        android:text="@string/read_name"
-        android:textColor="#37474F"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.864"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.92"
+        app:layout_constraintVertical_bias="0.825"
         tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck" />
 
 

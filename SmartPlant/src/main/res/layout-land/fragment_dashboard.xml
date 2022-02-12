@@ -7,6 +7,40 @@
     android:background="#9C8BC34A"
     tools:context=".ui.dashboard.DashboardFragment">
 
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="18dp"
+        app:fab_expandDirection="up"
+        app:fab_labelsPosition="left"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorDisabled="#FFF"
+            app:fab_icon="@drawable/circlecheck"
+            app:fab_size="mini"
+            app:fab_title="Icon 1" />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabfeedbackBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorDisabled="#FFF"
+            app:fab_icon="@drawable/feedback"
+            app:fab_size="mini"
+            app:fab_title="Icon 1" />
+
+
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
     <TextView
         android:id="@+id/dashName"
         android:layout_width="335dp"
@@ -17,26 +51,26 @@
         android:textColor="#503F6E"
         android:textSize="24sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.026" />
+        app:layout_constraintVertical_bias="0.047" />
 
     <ImageButton
         android:id="@+id/learnButton"
         android:layout_width="162dp"
         android:layout_height="104dp"
-        android:layout_marginStart="16dp"
         android:backgroundTint="#9C8BC34A"
         android:contentDescription="@string/learnplants"
         android:scaleType="fitXY"
         android:src="@drawable/learnbutton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.302"
-        app:layout_constraintStart_toEndOf="@+id/historyButton"
-        app:layout_constraintTop_toBottomOf="@+id/healthButton"
-        app:layout_constraintVertical_bias="0.422"
+        app:layout_constraintHorizontal_bias="0.725"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.716"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -51,8 +85,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.272"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sensorsButton"
-        app:layout_constraintVertical_bias="0.422"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.716"
         tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -65,10 +99,10 @@
         android:src="@drawable/planthealthbutton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.342"
-        app:layout_constraintStart_toEndOf="@+id/sensorsButton"
+        app:layout_constraintHorizontal_bias="0.725"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.299"
+        app:layout_constraintVertical_bias="0.289"
         tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
 
     <ImageButton
