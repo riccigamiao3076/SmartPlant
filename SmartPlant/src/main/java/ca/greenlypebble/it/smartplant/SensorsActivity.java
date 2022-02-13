@@ -36,7 +36,7 @@ public class SensorsActivity extends Activity {
 
         tempDatabase = FirebaseDatabase.getInstance().getReference().child("DHT22").child("Temperature").child("Degree Celsius");
         humidDatabase = FirebaseDatabase.getInstance().getReference().child("DHT22").child("Humidity").child("Percentage");
-        motionDatabase = FirebaseDatabase.getInstance().getReference().child("User Info").child("GuOK1xzu0SPiutMh2yzG7TVVQnA3").child("Motion Sensor");
+        motionDatabase = FirebaseDatabase.getInstance().getReference().child("HC-SR501").child("Motion Detected");
         lightDatabase = FirebaseDatabase.getInstance().getReference().child("User Info").child("GuOK1xzu0SPiutMh2yzG7TVVQnA3").child("Light Sensor");
         waterDatabase = FirebaseDatabase.getInstance().getReference().child("User Info").child("GuOK1xzu0SPiutMh2yzG7TVVQnA3").child("Water level");
 
@@ -84,7 +84,7 @@ public class SensorsActivity extends Activity {
                         if (snapshot.exists())
                         {
                             String data=snapshot.getValue().toString();
-                            motionVal.setText(data);
+                            motionVal.setText("Rodent Detected at: " + data);
                         }
                     }
 

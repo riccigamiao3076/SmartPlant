@@ -101,16 +101,17 @@
 
     <TextView
         android:id="@+id/motionVal"
-        android:layout_width="85dp"
-        android:layout_height="32dp"
+        android:layout_width="248dp"
+        android:layout_height="67dp"
+        android:gravity="center"
         android:text="@string/motionRead"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.782"
+        app:layout_constraintHorizontal_bias="0.993"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.454" />
+        app:layout_constraintVertical_bias="0.453" />
 
     <TextView
         android:id="@+id/lightVal"
