@@ -34,8 +34,8 @@ public class SensorsActivity extends Activity {
         lightVal = (TextView) findViewById(R.id.lightVal);
         waterVal = (TextView) findViewById(R.id.waterVal);
 
-        tempDatabase = FirebaseDatabase.getInstance().getReference().child("User Info").child("GuOK1xzu0SPiutMh2yzG7TVVQnA3").child("Temperature");
-        humidDatabase = FirebaseDatabase.getInstance().getReference().child("User Info").child("GuOK1xzu0SPiutMh2yzG7TVVQnA3").child("Humidity");
+        tempDatabase = FirebaseDatabase.getInstance().getReference().child("DHT22").child("Temperature").child("Degree Celsius");
+        humidDatabase = FirebaseDatabase.getInstance().getReference().child("DHT22").child("Humidity").child("Percentage");
         motionDatabase = FirebaseDatabase.getInstance().getReference().child("User Info").child("GuOK1xzu0SPiutMh2yzG7TVVQnA3").child("Motion Sensor");
         lightDatabase = FirebaseDatabase.getInstance().getReference().child("User Info").child("GuOK1xzu0SPiutMh2yzG7TVVQnA3").child("Light Sensor");
         waterDatabase = FirebaseDatabase.getInstance().getReference().child("User Info").child("GuOK1xzu0SPiutMh2yzG7TVVQnA3").child("Water level");
@@ -56,7 +56,7 @@ public class SensorsActivity extends Activity {
                         if (snapshot.exists())
                         {
                             String data=snapshot.getValue().toString();
-                            tempVal.setText(data);
+                            tempVal.setText(data+ " °C");
                         }
                     }
 
@@ -70,7 +70,7 @@ public class SensorsActivity extends Activity {
                         if (snapshot.exists())
                         {
                             String data=snapshot.getValue().toString();
-                            humidVal.setText(data);
+                            humidVal.setText(data + " %");
                         }
                     }
 
