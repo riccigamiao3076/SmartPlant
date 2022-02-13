@@ -40,7 +40,7 @@ public class SensorsActivity extends Activity {
         tempDatabase = FirebaseDatabase.getInstance().getReference().child("DHT22").child("Temperature").child("Degree Celsius");
         humidDatabase = FirebaseDatabase.getInstance().getReference().child("DHT22").child("Humidity").child("Percentage");
         motionDatabase = FirebaseDatabase.getInstance().getReference().child("HC-SR501").child("Motion Detected");
-        lightDatabase = FirebaseDatabase.getInstance().getReference().child("User Info").child("GuOK1xzu0SPiutMh2yzG7TVVQnA3").child("Light Sensor");
+        lightDatabase = FirebaseDatabase.getInstance().getReference().child("BH1750").child("Light Level").child("lux");
         waterDatabase = FirebaseDatabase.getInstance().getReference().child("User Info").child("GuOK1xzu0SPiutMh2yzG7TVVQnA3").child("Water level");
 
         exitSensor.setOnClickListener(new View.OnClickListener() {
@@ -104,8 +104,8 @@ public class SensorsActivity extends Activity {
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         if (snapshot.exists())
                         {
-                            String data=snapshot.getValue().toString();
-                            lightVal.setText(data);
+                            String data = snapshot.getValue().toString();
+                            lightVal.setText(data + " lux");
                         }
                     }
 

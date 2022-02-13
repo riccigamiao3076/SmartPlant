@@ -115,16 +115,16 @@
 
     <TextView
         android:id="@+id/lightVal"
-        android:layout_width="121dp"
-        android:layout_height="32dp"
+        android:layout_width="182dp"
+        android:layout_height="63dp"
         android:text="@string/lightRead"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.879"
+        app:layout_constraintHorizontal_bias="0.846"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.616" />
+        app:layout_constraintVertical_bias="0.605" />
 
     <ImageView
         android:id="@+id/lightValue"
