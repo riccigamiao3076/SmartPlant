@@ -14,6 +14,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class SensorsActivity extends Activity {
 
     Button exitSensor, readBtn;
@@ -84,7 +87,11 @@ public class SensorsActivity extends Activity {
                         if (snapshot.exists())
                         {
                             String data=snapshot.getValue().toString();
-                            motionVal.setText("Rodent Detected at: " + data);
+                            long Timestamp = Long.parseLong(data);
+                            Date timeD = new Date(Timestamp * 1000);
+                            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+                            String Time = sdf.format(timeD);
+                            motionVal.setText("Rodent Detected at: " + Time);
                         }
                     }
 
