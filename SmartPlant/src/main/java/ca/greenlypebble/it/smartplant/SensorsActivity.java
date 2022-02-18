@@ -41,7 +41,7 @@ public class SensorsActivity extends Activity {
         humidDatabase = FirebaseDatabase.getInstance().getReference().child("DHT22").child("Humidity").child("Percentage");
         motionDatabase = FirebaseDatabase.getInstance().getReference().child("HC-SR501").child("Motion Detected");
         lightDatabase = FirebaseDatabase.getInstance().getReference().child("BH1750").child("Light Level").child("lux");
-        waterDatabase = FirebaseDatabase.getInstance().getReference().child("User Info").child("GuOK1xzu0SPiutMh2yzG7TVVQnA3").child("Water level");
+        waterDatabase = FirebaseDatabase.getInstance().getReference().child("LLC 4026").child("Soil Moisture Sensor").child("Moisture Level");
 
         exitSensor.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -119,7 +119,7 @@ public class SensorsActivity extends Activity {
                         if (snapshot.exists())
                         {
                             String data=snapshot.getValue().toString();
-                            waterVal.setText(data);
+                            waterVal.setText(data + " bars");
                         }
                     }
 
