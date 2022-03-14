@@ -37,11 +37,11 @@ public class SensorsActivity extends Activity {
         lightVal = (TextView) findViewById(R.id.lightVal);
         waterVal = (TextView) findViewById(R.id.waterVal);
 
-        tempDatabase = FirebaseDatabase.getInstance().getReference().child("DHT22").child("Temperature").child("Degree Celsius");
-        humidDatabase = FirebaseDatabase.getInstance().getReference().child("DHT22").child("Humidity").child("Percentage");
+        tempDatabase = FirebaseDatabase.getInstance().getReference().child("Sensors").child("Temperature");
+        humidDatabase = FirebaseDatabase.getInstance().getReference().child("Sensors").child("Humidity");
         motionDatabase = FirebaseDatabase.getInstance().getReference().child("HC-SR501").child("Motion Detected");
-        lightDatabase = FirebaseDatabase.getInstance().getReference().child("BH1750").child("Light Level");
-        waterDatabase = FirebaseDatabase.getInstance().getReference().child("LLC 4026").child("Soil Moisture");
+        lightDatabase = FirebaseDatabase.getInstance().getReference().child("Sensors").child("Light Level");
+        waterDatabase = FirebaseDatabase.getInstance().getReference().child("Sensors").child("Soil Moisture");
 
         exitSensor.setOnClickListener(new View.OnClickListener() {
             @Override
