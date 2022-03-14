@@ -39,7 +39,7 @@ public class SensorsActivity extends Activity {
 
         tempDatabase = FirebaseDatabase.getInstance().getReference().child("Sensors").child("Temperature");
         humidDatabase = FirebaseDatabase.getInstance().getReference().child("Sensors").child("Humidity");
-        motionDatabase = FirebaseDatabase.getInstance().getReference().child("HC-SR501").child("Motion Detected");
+        motionDatabase = FirebaseDatabase.getInstance().getReference().child("Sensors").child("Motion");
         lightDatabase = FirebaseDatabase.getInstance().getReference().child("Sensors").child("Light Level");
         waterDatabase = FirebaseDatabase.getInstance().getReference().child("Sensors").child("Soil Moisture");
 
